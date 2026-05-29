@@ -35,9 +35,7 @@ export default function ProceduresPreview() {
         </div>
 
         <div className="w-full lg:w-2/3">
-          <h2 className="mb-8 text-3xl font-bold text-white md:text-[32px]">
-            Nuestros Procedimientos
-          </h2>
+          <h2 className="mb-8 text-3xl font-bold text-white md:text-[32px]">Procedimientos</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {proceduresPreview.items.map((item) => (
               <Link

@@ -9,7 +9,7 @@ export default function BlogPreview() {
       <div className="mx-auto max-w-container px-4 md:px-6">
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <h2 className="text-3xl font-bold text-primary md:text-[32px]">Nuestro Blog</h2>
+            <h2 className="text-3xl font-bold text-primary md:text-[32px]">Blog</h2>
             <p className="text-on-surface-variant">
               Información relevante sobre salud cardiovascular.
             </p>

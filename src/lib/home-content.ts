@@ -43,30 +43,6 @@ export const proceduresPreview = {
   ],
 } as const;
 
-export const featuredDoctors = [
-  {
-    name: "Dr. Abreu H.",
-    role: "Cardiología Intervencionista",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAUepsG37vUCMTXDXRi-HuceMXp9eaXXElyRF_PY2pr1Zt9YkqzmTdahfR73hO_PROjuXbqcR5ENqFkfdBV7SkErFFqrC0nNs5Aj5WPUifJQsbZjBKUZ0dcgbpZmsUO80ubCSdL5xgSDzaV7SNkxZm1bDHS3LpCoUCGIvrKD2vpTrXfHr0Ts2nWgiRL3oKCZHrSAGNMs7J6FmR2jaI7VzInyDLfm_dPifxz03rJm39OigP7qayHxUBZ5jyDPcgVrrjnUMYFlnjFjYM",
-    whatsapp: "584126179854",
-  },
-  {
-    name: "Dra. Azpúrua I.",
-    role: "Hemodinamia Avanzada",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCBN5YoV5q2_IpQxXQ1x0WbLudJ-e683OiOhNB3CGrCXtkRPwceFFGwOLMe5t7nFjdNxVsYZnqQP96RBxgnjgoVaFGKP51EjEVAzwbKWuil_8DtcGTfdOCttAZLQNz3zzvbgphUMRAWEDoJMtIJoXC8eA-WhSpvtWYMWYRvUJ57lDT1-IZD9W5XqfCYoLUKFTVoJGP0OoILzsChmzPxNqUHZWeRew3sxfEQBfrB2RSor2zALeOtZuyOdEMv9ZLjaczL11KF6UjhqyA",
-    whatsapp: "584142596909",
-  },
-  {
-    name: "Dr. Fermín M.",
-    role: "Director Médico",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDh1Hkvbs8DTTHMXyvqvzYOoFWHj8bScAakLsnknmKKIyNJDTJYD3-MjIg4KPmujSE2MF2NH7MloPoWaxw6-ET1W1vev9gD3oiOe3DRsXdRkElDI3sAE3PzoWp0721-4EcArFj2K1jhVeIBswL0P-UlHmhLWIJSTdBovpYlpBrf7oJyy01JOtFlcdyK-pP9yc8H4_vd4mMwcWsQdtOsKH2SYSRxmz-Ca0uxPB77reFRJPdTSDEcorL0bHE8cXGyMMp_T-MUYCFJ1gg",
-    whatsapp: "584123271970",
-  },
-] as const;
-
 export const blogPreview = [
   {
     slug: "imaye",
