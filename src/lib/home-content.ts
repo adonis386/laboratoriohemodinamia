@@ -1,16 +1,10 @@
 export const heroSlides = [
-  {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKRPAXgTqmH8b7yHPy_43Lg755Eha1rf-GWsV8A2FEUBj3d4XqJdWWAbBf4mbHN7foqPNPy3XDKs05sQ3L5wxoXfOHYjv-sX5EGgILYZahrVTdqqEXKoI7mHOFN82mp7eXGS2j7EnefvF_y225QDQd7-AHgTztLVbN2m2EDDQCrdqtkrOMZyGzeXnwAETwQqV6mkFmLNi6cPsidNgpYsrmErP-hcROSnrWDoAfct38haUqv7Cf2_Pytt-2f2OEk2JIR6SezN-8CyM",
-    alt: "Sala de hemodinamia con tecnología de imagenología avanzada",
-  },
-  {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD04BGGcNVkD5DswEOTnZKsISNS78s5blCWZj5MbhDaazssupTUSuOjIdTARqohVNv7xarfV4NSxoWjNbLWiR0ivV-1zLZ13WorYRRlz08dBvaiPQzlHR624g0TawQD_-RqQQSJIniVR2rK2JqgOfhykvCJtR20hr_7x8X-uh0UKf8sSBaWT9LX9ePqId2IkfOc0T3DzijGBeiEl2O4rfbvva0BDgJwLqLOX_R0YH1gk_ZOVYjre4hXLNn_W6o_TRKzBqnCkdvJp20",
-    alt: "Equipo médico especializado en cardiología intervencionista",
-  },
-  {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuA7wadUUR1SL0jdBTmY6fl_Ta48BfoJxnoGsgEZC1Bpsp9Jd8nbldltqf6NGSLlihWSIWFmzEiA9juPc-r78g-PUGWs7KjRjmkkr5QaX5Asfm-F9uV3CZ4aUH2HsSP8GmKAg4vFXUkCzyFfTNGc_x1rxiw3zxiYa9oCZuX3ELgSOrfHBvGCqvGvOeM35spoH8MSxnw3iS9L7bszJGW4xXfeL66ZErNmNIEg1vbVqUOqTzPA46Y9QDAATTFY-dRa7cPjq11rSjIUCKs",
-    alt: "Equipamiento de cateterismo cardiovascular de alta precisión",
-  },
+  { src: "/hero.png", alt: "Angioplastia coronaria - Laboratorio Hemodinamia HCC" },
+  { src: "/hero-2.png", alt: "Procedimiento de hemodinamia en sala especializada" },
+  { src: "/hero-3.png", alt: "Equipo médico en cardiología intervencionista" },
+  { src: "/hero-4.png", alt: "Cateterismo cardíaco con tecnología avanzada" },
+  { src: "/hero-5.png", alt: "Laboratorio de hemodinamia HCC" },
+  { src: "/hero-6.png", alt: "Atención cardiovascular de alta especialidad" },
 ] as const;
 
 export const strategicPlan = {
@@ -67,20 +61,5 @@ export const blogPreview = [
       "Cómo este procedimiento mínimamente invasivo diagnostica y trata afecciones cardiovasculares...",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDF5RXIrhUrplUc7WTOsZLyd7C-MYUGS3bx0k3xYyWw1A_eUmtvCzJy82z_VqAMYA21YHVnHGKNipuulZkSrMsinTd_rsuJEY4S_NdlvD8c_DePsaRVl93lh78ixEYeTAdMgx_EFzjy_cMxwIjnysIjSPYBBOVSAJvd17zxe2DnyJXV6BXF5YlutW-EV8XJ9vHLqN_9pKULmgjSgyivnFrCoymelUhHOkJ6tOZGnytz_Guttt0ErpoU3WoHz14RfBbLrxJxVdIlf9k",
-  },
-] as const;
-
-export const galleryPreview = [
-  {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDhnNgsa-1v2e_0uVOp_rjdExprMCiNoeiXRj_XLfHutsOLMEl2Uo4Qpy_cynAIpP3m0sljYcFvvRDA7rngYUEIj0BI2ONFZEQ0XPY3XrEKacTbGSy6yic7vsfPYp0IWyo_WWipP5hVsaR8bglu_bXwToXIKgVToG3Yt-8B6ABypAXV_lUEVsfNbwCBoWSJIxRub9AGAnN-nRpGSDga6IjYHvMSzzcAUUHuHAri2Jo4em8WIBQcKxdMBlJXMb7KM0dA332qRA5Ni0Q",
-    alt: "Sala de hemodinamia con equipamiento moderno",
-  },
-  {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAzg6l18E_o2cci5s6Qsmo-biRR1o6QTmXO7YPd8OMTxkYoULhqFZ-QC7iU28UZiGnr0oFyQkVYwJ8Iu4S0k_N9hUgBglXhdM0tDN-faOUwAT2xS8rioUwqnvLDNq2iO7xOduhGYkY4ZqYn_65vK0nITXhgytTibAkWES7O-H6UkCGd_T-_bvZw0Dj8F6gqQ9BCcXqnQD3JaZ33wILJr5BJsQyn7BqRhS6rmMNSsSY6Fe8THY2dO6gckHFq8gPsLcqraeq2INugEUw",
-    alt: "Instalaciones del laboratorio de hemodinamia",
-  },
-  {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBku0J13QcM_YoDruTa-Z4J7nQR-PDDq9Ptb9ilPdCE5WssczVqpvR_7xwCfge96UKzHYvrL4jiReb1301q5QruCwM6AS-rk4a_ifnY-RV0AcqA1ybzMNz6T9xCvJpah07utShK5LzeCFZp8iA967ibvqSHL08-y53mGdoF1k6-gk_zbpDzCnl0xvTuyVZMZjWsBIxtoLKrA1O-qJanElRaOpnwLoh4857k210_OYtXSQucO3iwRQfQyL_mres3IHJV7DsMRO0pvak",
-    alt: "Monitores de diagnóstico vascular de alta resolución",
   },
 ] as const;

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { galleryPreview } from "@/lib/home-content";
+import GalleryGrid from "@/components/galeria/GalleryGrid";
+import { galleryImages } from "@/lib/gallery-content";
 
 export const metadata: Metadata = {
   title: "Galería",
@@ -20,21 +20,8 @@ export default function GaleriaPage() {
       </section>
 
       <section className="bg-page-gray py-16 md:py-24">
-        <div className="mx-auto grid max-w-container grid-cols-1 gap-6 px-4 md:grid-cols-2 lg:grid-cols-3 md:px-6">
-          {galleryPreview.map((item) => (
-            <div
-              key={item.src}
-              className="group aspect-square overflow-hidden rounded-2xl shadow-sm"
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={400}
-                height={400}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
-          ))}
+        <div className="mx-auto max-w-container px-4 md:px-6">
+          <GalleryGrid images={galleryImages} />
         </div>
       </section>
     </>

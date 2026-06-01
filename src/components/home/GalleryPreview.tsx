@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import { galleryPreview } from "@/lib/home-content";
+import GalleryGrid from "@/components/galeria/GalleryGrid";
+import { galleryPreview } from "@/lib/gallery-content";
 
 export default function GalleryPreview() {
   return (
@@ -12,21 +12,12 @@ export default function GalleryPreview() {
         </p>
       </div>
 
-      <div className="mx-auto grid max-w-container grid-cols-1 gap-6 px-4 md:grid-cols-3 md:px-6">
-        {galleryPreview.map((item) => (
-          <div
-            key={item.src}
-            className="group aspect-square overflow-hidden rounded-2xl shadow-sm"
-          >
-            <Image
-              src={item.src}
-              alt={item.alt}
-              width={400}
-              height={400}
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
-        ))}
+      <div className="mx-auto max-w-container px-4 md:px-6">
+        <GalleryGrid
+          images={galleryPreview}
+          aspectClass="aspect-square"
+          className="grid grid-cols-1 gap-6 md:grid-cols-3"
+        />
       </div>
 
       <div className="mt-10 text-center">

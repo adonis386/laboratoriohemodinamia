@@ -1,5 +1,8 @@
 "use client";
 
+import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -16,11 +19,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[100] h-20 border-b border-ice-blue-deep bg-white shadow-sm">
       <nav className="mx-auto flex h-full max-w-container items-center justify-between px-4 md:px-6">
-        <Link
-          href="/"
-          className="text-lg font-bold text-primary md:text-2xl"
-        >
-          {site.name}
+        <Link href="/" className="flex shrink-0 items-center" aria-label={site.name}>
+          <Image
+            src="/logo.png"
+            alt={site.name}
+            width={80}
+            height={80}
+            className="h-16 w-16 object-contain md:h-[72px] md:w-[72px]"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -44,19 +51,19 @@ export default function Header() {
             href={site.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-full p-2 text-primary transition hover:bg-ice-blue-light sm:block"
+            className="hidden rounded-full p-2 text-xl text-primary transition hover:bg-ice-blue-light hover:text-[#E4405F] sm:block"
             aria-label="Instagram"
           >
-            <MaterialIcon name="share" />
+            <FontAwesomeIcon icon={faInstagram} />
           </a>
           <a
             href={site.social.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-full p-2 text-primary transition hover:bg-ice-blue-light sm:block"
+            className="hidden rounded-full p-2 text-xl text-primary transition hover:bg-ice-blue-light hover:text-whatsapp-green sm:block"
             aria-label="WhatsApp"
           >
-            <MaterialIcon name="chat_bubble" />
+            <FontAwesomeIcon icon={faWhatsapp} />
           </a>
           <Link
             href="/contacto"

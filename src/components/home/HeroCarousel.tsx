@@ -40,8 +40,9 @@ export default function HeroCarousel() {
               src={slide.src}
               alt={slide.alt}
               fill
-              className="object-cover opacity-90"
+              className="object-cover object-center"
               priority={index === 0}
+              quality={90}
               sizes="100vw"
             />
           </div>
