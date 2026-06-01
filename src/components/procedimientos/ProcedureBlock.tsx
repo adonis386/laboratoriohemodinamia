@@ -1,5 +1,5 @@
-import Image from "next/image";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import ProcedureMedia from "@/components/procedimientos/ProcedureMedia";
 import type { ProcedureItem } from "@/lib/procedimientos-content";
 
 type ProcedureBlockProps = {
@@ -7,7 +7,7 @@ type ProcedureBlockProps = {
 };
 
 export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
-  const { id, number, title, description, image, bullets, quote, reverse, altBg } =
+  const { id, number, title, description, image, video, bullets, quote, reverse, altBg } =
     procedure;
 
   return (
@@ -42,14 +42,7 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
         )}
       </div>
 
-      <div className="relative min-h-[300px] bg-surface-container-low lg:w-1/2">
-        <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-        <div className="video-overlay-gradient absolute inset-0 flex cursor-pointer items-center justify-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition group-hover:scale-110">
-            <MaterialIcon name="play_arrow" className="text-4xl text-white" filled />
-          </div>
-        </div>
-      </div>
+      <ProcedureMedia image={image} alt={title} video={video} />
     </article>
   );
 }

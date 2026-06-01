@@ -4,6 +4,8 @@ export type ProcedureItem = {
   title: string;
   description: string;
   image: string;
+  /** Ruta en public/, ej. /ENDOPROTESIS_AORTICA.mp4 */
+  video?: string;
   bullets?: string[];
   quote?: string;
   reverse?: boolean;
@@ -60,6 +62,7 @@ export const proceduresList: ProcedureItem[] = [
       "Tratamiento de aneurismas y disecciones de la aorta mediante prótesis vasculares implantadas por cateterismo, sin cirugía mayor abierta. Recuperación más rápida y menos dolorosa.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuB-j_or9O2i_AYpWLhelowyJuXxI42Cpbip5SeEcknSB69Mfrd-umzGLXs3NYp4t8e05y7se3iG407QdeD1lCfpuSLn6FAfdwDcBc0TlfnwdNLvzq3L9BVVJR3ScFfS4ZfFaIwhraTkTdOCSGLibGM_RPfWpurYYfcJH7ZI9p9FZVwBWc2aO9w31-2h2IUqLuf1P-igkwxjOr6rO_RiQPD5lyr7dl_oxWmj3eojOuLczKU0OzbSmNWnyYwkJkDMBqmFBHW-tnB7wpw",
+    video: "/ENDOPROTESIS_AORTICA.mp4",
   },
   {
     id: "valvulas",
