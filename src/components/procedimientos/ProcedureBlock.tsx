@@ -7,8 +7,19 @@ type ProcedureBlockProps = {
 };
 
 export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
-  const { id, number, title, description, image, video, bullets, quote, reverse, altBg } =
-    procedure;
+  const {
+    id,
+    number,
+    title,
+    description,
+    image,
+    video,
+    videoPreviewTime,
+    bullets,
+    quote,
+    reverse,
+    altBg,
+  } = procedure;
 
   return (
     <article
@@ -42,7 +53,12 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
         )}
       </div>
 
-      <ProcedureMedia image={image} alt={title} video={video} />
+      <ProcedureMedia
+        alt={title}
+        image={image}
+        video={video}
+        videoPreviewTime={videoPreviewTime}
+      />
     </article>
   );
 }

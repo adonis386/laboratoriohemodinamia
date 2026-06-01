@@ -1,16 +1,78 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 
+const DEFAULT_PREVIEW_TIME = 3;
+
 type ProcedureMediaProps = {
-  image: string;
   alt: string;
+  image?: string;
   video?: string;
+  /** Segundo del video para la carátula (fragmento del mismo archivo) */
+  videoPreviewTime?: number;
 };
 
-export default function ProcedureMedia({ image, alt, video }: ProcedureMediaProps) {
+function ProcedureVideoCover({
+  src,
+  previewTime,
+}: {
+  src: string;
+  previewTime: number;
+}) {
+  const ref = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const seekToPreview = () => {
+      const duration = el.duration;
+      const target =
+        Number.isFinite(duration) && duration > 0
+          ? Math.min(previewTime, Math.max(0, duration - 0.25))
+          : previewTime;
+      if (el.currentTime !== target) {
+        el.currentTime = target;
+      } else {
+        el.pause();
+      }
+    };
+
+    const onLoadedMetadata = () => seekToPreview();
+    const onSeeked = () => el.pause();
+
+    el.addEventListener("loadedmetadata", onLoadedMetadata);
+    el.addEventListener("seeked", onSeeked);
+    if (el.readyState >= 1) seekToPreview();
+
+    return () => {
+      el.removeEventListener("loadedmetadata", onLoadedMetadata);
+      el.removeEventListener("seeked", onSeeked);
+    };
+  }, [src, previewTime]);
+
+  return (
+    <video
+      ref={ref}
+      src={src}
+      muted
+      playsInline
+      preload="metadata"
+      aria-hidden
+      tabIndex={-1}
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+  );
+}
+
+export default function ProcedureMedia({
+  image,
+  alt,
+  video,
+  videoPreviewTime = DEFAULT_PREVIEW_TIME,
+}: ProcedureMediaProps) {
   const [open, setOpen] = useState(false);
 
   const close = useCallback(() => setOpen(false), []);
@@ -28,17 +90,23 @@ export default function ProcedureMedia({ image, alt, video }: ProcedureMediaProp
     };
   }, [open, close]);
 
+  const showPlay = Boolean(video);
+
   return (
     <>
       <div className="relative min-h-[300px] bg-surface-container-low lg:w-1/2">
-        <Image
-          src={image}
-          alt={alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 50vw"
-        />
         {video ? (
+          <ProcedureVideoCover src={video} previewTime={videoPreviewTime} />
+        ) : image ? (
+          <Image
+            src={image}
+            alt={alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        ) : null}
+        {showPlay ? (
           <button
             type="button"
             onClick={() => setOpen(true)}

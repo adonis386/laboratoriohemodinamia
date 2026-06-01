@@ -9,12 +9,21 @@ type BlogCardProps = {
   author: string;
   date: string;
   image: string;
+  video?: string;
 };
 
-export default function BlogCard({ slug, title, excerpt, author, date, image }: BlogCardProps) {
+export default function BlogCard({
+  slug,
+  title,
+  excerpt,
+  author,
+  date,
+  image,
+  video,
+}: BlogCardProps) {
   return (
     <article className="card-shadow flex h-full flex-col overflow-hidden rounded-xl border border-ice-blue-deep bg-white transition duration-300 hover:-translate-y-2">
-      <div className="h-48 w-full overflow-hidden">
+      <div className="relative h-48 w-full overflow-hidden">
         <Image
           src={image}
           alt={title}
@@ -22,6 +31,15 @@ export default function BlogCard({ slug, title, excerpt, author, date, image }: 
           height={192}
           className="h-full w-full object-cover"
         />
+        {video && (
+          <span
+            className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1 rounded-full bg-primary/90 px-2.5 py-1 text-xs font-semibold text-white"
+            aria-hidden
+          >
+            <MaterialIcon name="play_circle" className="text-base" filled />
+            Video
+          </span>
+        )}
       </div>
       <div className="flex flex-grow flex-col p-6">
         <div className="mb-3 flex items-center gap-4 text-xs text-on-surface-variant">

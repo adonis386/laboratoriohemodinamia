@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BlogArticleBody from "@/components/blog/BlogArticleBody";
+import BlogArticleVideo from "@/components/blog/BlogArticleVideo";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { blogPosts, getBlogPost } from "@/lib/blog-content";
 
@@ -54,6 +55,8 @@ export default async function BlogArticlePage({ params }: Props) {
         </div>
 
         <h1 className="mb-8 text-3xl font-bold text-primary md:text-4xl">{post.title}</h1>
+
+        {post.video && <BlogArticleVideo src={post.video} title={post.title} />}
 
         <BlogArticleBody paragraphs={post.paragraphs} />
       </div>
