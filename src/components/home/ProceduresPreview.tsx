@@ -1,9 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { proceduresPreview } from "@/lib/home-content";
 
 export default function ProceduresPreview() {
+  const [open, setOpen] = useState(false);
+  const close = useCallback(() => setOpen(false), []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open, close]);
+
   return (
     <section
       id="procedimientos"
@@ -21,18 +40,25 @@ export default function ProceduresPreview() {
       </div>
 
       <div className="relative z-10 mx-auto flex max-w-container flex-col gap-12 px-4 md:px-6 lg:flex-row">
-        <div className="relative hidden aspect-[9/16] w-full overflow-hidden rounded-2xl border-4 border-white/10 bg-black lg:block lg:w-1/3">
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="group relative aspect-[9/16] w-full overflow-hidden rounded-2xl border-4 border-white/10 bg-black lg:w-1/3"
+          aria-label="Reproducir video: Hemodinamia y cateterismo"
+        >
           <Image
             src={proceduresPreview.videoPoster}
             alt="Video de procedimientos de hemodinamia"
             fill
-            className="object-cover opacity-60"
-            sizes="33vw"
+            className="object-cover opacity-60 transition group-hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 33vw"
           />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <MaterialIcon name="videocam" className="text-6xl text-white opacity-80" />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition group-hover:bg-black/30">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition group-hover:scale-110">
+              <MaterialIcon name="play_arrow" className="text-4xl text-white" filled />
+            </div>
           </div>
-        </div>
+        </button>
 
         <div className="w-full lg:w-2/3">
           <h2 className="mb-8 text-3xl font-bold text-white md:text-[32px]">Procedimientos</h2>
@@ -62,6 +88,39 @@ export default function ProceduresPreview() {
           </div>
         </div>
       </div>
+
+      {open && (
+        <div
+          className="fixed inset-0 z-[300] flex items-center justify-center bg-black/92 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Video: Hemodinamia y cateterismo"
+          onClick={close}
+        >
+          <button
+            type="button"
+            onClick={close}
+            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            aria-label="Cerrar video"
+          >
+            <MaterialIcon name="close" className="text-3xl" />
+          </button>
+          <div
+            className="relative w-full max-w-4xl overflow-hidden rounded-xl bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              src={proceduresPreview.video}
+              controls
+              autoPlay
+              playsInline
+              className="max-h-[85vh] w-full"
+            >
+              Tu navegador no soporta la reproducción de video.
+            </video>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

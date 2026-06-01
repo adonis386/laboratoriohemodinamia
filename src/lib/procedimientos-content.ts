@@ -22,6 +22,7 @@ export const proceduresList: ProcedureItem[] = [
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCJYXpgMAG_GOwB93OfIlJjDrIu4NHus1_z2rplMksU4URqpR-b222AlpSRwwMyBhElAeG66UowpyziV--AnnLstMtitDW8IVeX2sU4Fz5Z2Z6A4TPh5EKem8SiTAq8ZDMXRKtJfzSv_ZBXXY6oQ1lJNLuLqplDHe61G5vfRj8drb4plf-kWeMbWC--qPyw_q65oB_aI3ukCgMh0dOs9CH53q-Ukiek3P_1Hcq95G0dI2d5_MO1nTXD3m2PSnSS4ODNgmPECrXk2N0",
     bullets: ["Precisión diagnóstica superior", "Recuperación rápida (2-4 horas)"],
+    video: "/CATETERISMO_CARDIACO_DIAGNOSTICO.mp4",
   },
   {
     id: "angioplastia-coronaria",
@@ -33,6 +34,7 @@ export const proceduresList: ProcedureItem[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDCh5tYvRZQxDcZ1hlwNhpV71AB_ONhshfNvMjom6PEYqFr12FgHHYDIkAD6nX0gD_OcSyUXbNuceY3FLSiERF4K0r7cVI3VGYCaj-brYLT9VdKFa8sbL08fCKsZ0-ZHTP8YqxdBDhUH4PTNTKI370_wdCIrE5Aj7YzfRRbNkm64D-cehOM7ZqK2O-5uNbpaTVs1FeYLPBwI6ugt6KOcqCeAkuNzegtMfV0vlng8kUGub2dQQ0hnLG-o1zw0aDaNjIIXeNAVN_E_2c",
     reverse: true,
     altBg: true,
+    video: "/ANGIOPLASTIA_CORONARIA.mp4",
   },
   {
     id: "angioplastia-periferica",
@@ -42,6 +44,7 @@ export const proceduresList: ProcedureItem[] = [
       "Tratamiento de obstrucciones en arterias de las piernas para evitar amputaciones. Técnicas y materiales avanzados permiten salvar el miembro inferior amenazado, incluso en casos no candidatos para cirugía.",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAGAcG5c_1PjjxravdufwjrHgS2oV470c0qNfqTl7ch3cmZbP-ciAKrXhQzwY0i7OGGMW5YK7EHZy9_UGpir2m0n9agZTQ5F0OrO4XHUq5CF9X5rpkb2beqc9dNlZijvXBGhjjghbQXEDg9bnzZsZSOwHWqOlEqlPf7jdUFXFvCidpk0UoxWiCFs3WdCeI3p-D79KxloKRkRJS_amj2l_2AEAfteESRvcXdPlAUQmGehw5-WsIkSv647Wx4KWxGAcM90vguv8jgB64",
+    video: "/HEMODINAMIA_Y_CATETERISMO.mp4",
   },
   {
     id: "litotricia",
@@ -53,6 +56,7 @@ export const proceduresList: ProcedureItem[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBaWjH91VPmcMGjNaYGVdQE7M2c0m7iWCMhZ_VgoEik2aUvi5UeUViZ49oUtaZaaxdS8_P7pZ9vMP3mSR_DzYQFrCPBPN5iDeqlP56zeyzevvMXN8K8Z6tCwArR56lUYNDwRf_q9xnu0ir6dCB6fMuYB1GtHrmjATCu58AsdFKUr2V6xZo1KYjcZ42iRhKF3b2FbXQWKIGYca1lhJovrjJ2-X5v96kfmRzeH0U9C_nWfW0txt3_bbTAT5gJqGoHDSjW_JSKCiuFDk4",
     reverse: true,
     altBg: true,
+    video: "/LITOTRIPSIA.mp4",
   },
   {
     id: "endoprotesis",
