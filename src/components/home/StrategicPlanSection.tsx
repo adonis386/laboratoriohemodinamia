@@ -9,9 +9,9 @@ export default function StrategicPlanSection() {
         <div className="w-full overflow-hidden rounded-2xl shadow-xl md:w-1/2">
           <Image
             src={strategicPlan.image}
-            alt="Plan estratégico del Laboratorio Hemodinamia HCC"
-            width={640}
-            height={480}
+            alt="Especialistas del Laboratorio Hemodinamia HCC revisando imágenes coronarias en hemodinamia"
+            width={800}
+            height={600}
             className="h-auto w-full object-cover"
           />
         </div>

@@ -1,9 +1,21 @@
-export const blogPosts = [
+import { blogBodies } from "@/lib/blog-bodies";
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  image: string;
+  paragraphs: string[];
+};
+
+const postsMeta = [
   {
     slug: "imaye",
     title: "IMAYE, pionera en Venezuela con procedimientos de OCT",
     excerpt:
-      "LHHCC continúa liderando la innovación médica en el país integrando la Tomografía de Coherencia Óptica para diagnósticos de precisión.",
+      "IMAYE incorpora la Tomografía de Coherencia Óptica (OCT) para diagnóstico intravascular con imágenes de alta resolución.",
     author: "IMAYE",
     date: "15 Sep 2024",
     image:
@@ -11,9 +23,9 @@ export const blogPosts = [
   },
   {
     slug: "cuidado-post-cateterismo",
-    title: "Cuidado Post-Cateterismo: Guía para el Paciente",
+    title: "Cuidado Post-Cateterismo: Un Camino hacia la Recuperación y el Bienestar",
     excerpt:
-      "Todo lo que necesitas saber para una recuperación exitosa y segura después de tu intervención hemodinámica.",
+      "Guía de recuperación y cuidados después de un cateterismo cardíaco en el Laboratorio Hemodinamia HCC.",
     author: "Equipo LHHCC",
     date: "02 Nov 2024",
     image:
@@ -21,9 +33,9 @@ export const blogPosts = [
   },
   {
     slug: "hemodinamia-y-cateterismo",
-    title: "Hemodinamia y Cateterismo: Avances Modernos",
+    title: "Hemodinamia y Cateterismo: Características, Ventajas y Beneficios",
     excerpt:
-      "Descubre cómo las nuevas tecnologías están transformando los procedimientos mínimamente invasivos en el corazón.",
+      "Conozca las ventajas del cateterismo cardíaco como procedimiento mínimamente invasivo en cardiología moderna.",
     author: "Equipo LHHCC",
     date: "18 Nov 2024",
     image:
@@ -31,32 +43,53 @@ export const blogPosts = [
   },
   {
     slug: "enfermedad-arterial-miembros-inferiores",
-    title: "Enfermedad Arterial de Miembros Inferiores",
+    title: "Enfermedad Arterial de los Miembros Inferiores",
     excerpt:
-      "Síntomas, prevención y tratamientos innovadores para mejorar la circulación y calidad de vida de nuestros pacientes.",
-    author: "Equipo LHHCC",
+      "Claudicación, factores de riesgo y opciones de tratamiento para preservar la circulación y evitar la amputación.",
+    author: "Dr. Enrique Fermín M.",
     date: "05 Dic 2024",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuCF26Y_Yko9TVTqrEErFgJ41gPf2EPT8dXpK-owuFCX0eZlctN_OM4ZG1kRK5q6tikyXQdJ2eovY_WQSID0IYwvn66A_ieigqVpH_uwy0ftZLlIsBE4xupSbTfBWxPH731joqIzRZToRouo2LVN0XsImZHXVFzWLJwKi9vvjSm_JGN8_o4P9Kt3xXDjJKkj3YdlhUBp8UnZXoNpdWZVb1djXlcorCc1LtVQRHEsn6ZtIYSYhJBFMb2SVQ0_s-8b4rrpxQ1xxX_borU",
   },
   {
     slug: "litotricia-intracoronaria",
-    title: "Litotricia Intracoronaria: El futuro es hoy",
+    title: "IMAYE a la vanguardia con litotricia intracoronaria",
     excerpt:
-      "Uso de ondas de choque para el tratamiento de lesiones coronarias calcificadas severas sin cirugía invasiva.",
-    author: "Equipo LHHCC",
+      "Técnica de ondas de choque para tratar lesiones coronarias calcificadas severas en intervenciones percutáneas.",
+    author: "IMAYE",
     date: "20 Dic 2024",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBaWjH91VPmcMGjNaYGVdQE7M2c0m7iWCMhZ_VgoEik2aUvi5UeUViZ49oUtaZaaxdS8_P7pZ9vMP3mSR_DzYQFrCPBPN5iDeqlP56zeyzevvMXN8K8Z6tCwArR56lUYNDwRf_q9xnu0ir6dCB6fMuYB1GtHrmjATCu58AsdFKUr2V6xZo1KYjcZ42iRhKF3b2FbXQWKIGYca1lhJovrjJ2-X5v96kfmRzeH0U9C_nWfW0txt3_bbTAT5gJqGoHDSjW_JSKCiuFDk4",
   },
   {
     slug: "resena-historica",
-    title: "Reseña Histórica: Décadas de Corazón y Ciencia",
+    title: "Reseña Histórica del Laboratorio Hemodinamia HCC",
     excerpt:
-      "Un recorrido por la trayectoria de nuestro laboratorio y su impacto en la salud cardiovascular venezolana.",
-    author: "Fundación HCC",
-    date: "05 Ene 2025",
+      "Casi cuatro décadas de trayectoria en hemodinamia y cardiología intervencionista en el Hospital de Clínicas Caracas.",
+    author: "Dr. Enrique Fermín M.",
+    date: "Jul 2025",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAjXNaVc4Ua7T9dRn0_04Ab_HzmH9w8NlfU1wTDovrisfxJJx6P3YCe2L2RscQOI3t8aUi_dp0Oc9-Ksg94tsKUwkmD4JgEPRhOboGaq3oIEwVCqM1iyF8n2XSsELfFtm_mNx-kSG0jv7fcDFiMGuKWaYrbBfHppWDyY3a6fjjSjzWHiqgilAsY1QSGs2l75hgYdU8RZ8cBYyFmyperZ4WeNE8XUFEShJXgqRmr1_UxI4negM4-UtV7i0ZRMOQVqfUV7r_GO4xSz34",
   },
 ] as const;
+
+function prepareParagraphs(_slug: string, title: string, raw: string[]): string[] {
+  return raw.filter((para, index) => {
+    if (index === 0 && para.trim().toLowerCase() === title.trim().toLowerCase()) {
+      return false;
+    }
+    if (/^(por|autoría|autor)\b/i.test(para.trim())) {
+      return false;
+    }
+    return true;
+  });
+}
+
+export const blogPosts: BlogPost[] = postsMeta.map((meta) => ({
+  ...meta,
+  paragraphs: prepareParagraphs(meta.slug, meta.title, blogBodies[meta.slug] ?? []),
+}));
+
+export function getBlogPost(slug: string): BlogPost | undefined {
+  return blogPosts.find((p) => p.slug === slug);
+}

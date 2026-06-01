@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import BlogArticleBody from "@/components/blog/BlogArticleBody";
 import MaterialIcon from "@/components/ui/MaterialIcon";
-import { blogPosts } from "@/lib/blog-content";
+import { blogPosts, getBlogPost } from "@/lib/blog-content";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -15,14 +16,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = getBlogPost(slug);
   if (!post) return { title: "Artículo no encontrado" };
   return { title: post.title, description: post.excerpt };
 }
 
 export default async function BlogArticlePage({ params }: Props) {
   const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
+  const post = getBlogPost(slug);
   if (!post) notFound();
 
   return (
@@ -41,7 +42,7 @@ export default async function BlogArticlePage({ params }: Props) {
           Volver al Blog
         </Link>
 
-        <div className="mb-4 flex items-center gap-4 text-sm text-on-surface-variant">
+        <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-on-surface-variant">
           <span className="flex items-center gap-1">
             <MaterialIcon name="person" className="text-base" />
             {post.author}
@@ -52,16 +53,9 @@ export default async function BlogArticlePage({ params }: Props) {
           </span>
         </div>
 
-        <h1 className="mb-6 text-3xl font-bold text-primary md:text-4xl">{post.title}</h1>
-        <p className="mb-8 text-lg leading-relaxed text-on-surface-variant">{post.excerpt}</p>
+        <h1 className="mb-8 text-3xl font-bold text-primary md:text-4xl">{post.title}</h1>
 
-        <div className="prose prose-lg max-w-none text-on-surface">
-          <p>
-            Contenido completo del artículo disponible próximamente. Este artículo forma parte del
-            blog del Laboratorio Hemodinamia HCC y será ampliado en la siguiente fase del proyecto
-            con contenido editorial completo.
-          </p>
-        </div>
+        <BlogArticleBody paragraphs={post.paragraphs} />
       </div>
     </article>
   );
