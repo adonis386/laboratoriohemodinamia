@@ -17,7 +17,7 @@ export default function StrategicPlanSection() {
         </div>
         <div className="w-full md:w-1/2">
           <h2 className="mb-6 text-3xl font-bold md:text-[32px] md:leading-10">
-            Plan Estratégico y Compromiso Cardiovascular
+            Plan Estratégico
           </h2>
           <p className="mb-8 text-lg leading-relaxed opacity-90">
             Nuestra misión se fundamenta en la excelencia técnica y la empatía humana.
