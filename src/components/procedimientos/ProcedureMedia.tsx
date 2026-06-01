@@ -1,10 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import VideoCover from "@/components/ui/VideoCover";
 
 const DEFAULT_PREVIEW_TIME = 3;
+
+/** Encuadre por defecto: prioriza rostro (evita recorte en la parte superior) */
+const DEFAULT_COVER_POSITION = "center 28%";
 
 type ProcedureMediaProps = {
   alt: string;
@@ -12,66 +16,15 @@ type ProcedureMediaProps = {
   video?: string;
   /** Segundo del video para la carátula (fragmento del mismo archivo) */
   videoPreviewTime?: number;
+  videoCoverPosition?: string;
 };
-
-function ProcedureVideoCover({
-  src,
-  previewTime,
-}: {
-  src: string;
-  previewTime: number;
-}) {
-  const ref = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const seekToPreview = () => {
-      const duration = el.duration;
-      const target =
-        Number.isFinite(duration) && duration > 0
-          ? Math.min(previewTime, Math.max(0, duration - 0.25))
-          : previewTime;
-      if (el.currentTime !== target) {
-        el.currentTime = target;
-      } else {
-        el.pause();
-      }
-    };
-
-    const onLoadedMetadata = () => seekToPreview();
-    const onSeeked = () => el.pause();
-
-    el.addEventListener("loadedmetadata", onLoadedMetadata);
-    el.addEventListener("seeked", onSeeked);
-    if (el.readyState >= 1) seekToPreview();
-
-    return () => {
-      el.removeEventListener("loadedmetadata", onLoadedMetadata);
-      el.removeEventListener("seeked", onSeeked);
-    };
-  }, [src, previewTime]);
-
-  return (
-    <video
-      ref={ref}
-      src={src}
-      muted
-      playsInline
-      preload="metadata"
-      aria-hidden
-      tabIndex={-1}
-      className="absolute inset-0 h-full w-full object-cover"
-    />
-  );
-}
 
 export default function ProcedureMedia({
   image,
   alt,
   video,
   videoPreviewTime = DEFAULT_PREVIEW_TIME,
+  videoCoverPosition = DEFAULT_COVER_POSITION,
 }: ProcedureMediaProps) {
   const [open, setOpen] = useState(false);
 
@@ -96,13 +49,17 @@ export default function ProcedureMedia({
     <>
       <div className="relative min-h-[300px] bg-surface-container-low lg:w-1/2">
         {video ? (
-          <ProcedureVideoCover src={video} previewTime={videoPreviewTime} />
+          <VideoCover
+            src={video}
+            previewTime={videoPreviewTime}
+            objectPosition={videoCoverPosition}
+          />
         ) : image ? (
           <Image
             src={image}
             alt={alt}
             fill
-            className="object-cover"
+            className="object-cover object-[center_28%]"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
         ) : null}

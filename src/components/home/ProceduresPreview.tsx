@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import VideoCover from "@/components/ui/VideoCover";
 import { proceduresPreview } from "@/lib/home-content";
 
 export default function ProceduresPreview() {
@@ -46,12 +47,10 @@ export default function ProceduresPreview() {
           className="group relative aspect-[9/16] w-full overflow-hidden rounded-2xl border-4 border-white/10 bg-black lg:w-1/3"
           aria-label="Reproducir video: Hemodinamia y cateterismo"
         >
-          <Image
-            src={proceduresPreview.videoPoster}
-            alt="Video de procedimientos de hemodinamia"
-            fill
-            className="object-cover opacity-60 transition group-hover:scale-105"
-            sizes="(max-width: 1024px) 100vw, 33vw"
+          <VideoCover
+            src={proceduresPreview.video}
+            previewTime={proceduresPreview.videoPreviewTime}
+            className="absolute inset-0 h-full w-full object-cover opacity-80 transition group-hover:scale-105"
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition group-hover:bg-black/30">
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition group-hover:scale-110">

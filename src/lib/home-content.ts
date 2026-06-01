@@ -17,17 +17,16 @@ export const strategicPlan = {
 } as const;
 
 export const historySection = {
-  videoPoster:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCf_Johc08TCqImqUa--1phM6PA1etiJM42hjfRtlZg_fA3VsYZsjZsz9FTzPjd7nYPdUY1cbFph5it8yLCKehFUteT2WLlFKhpR0UmJzzGgLR3-K1cnH7CaYw7nBOvrxuDYzGH0_FooHXOKDlyM7iB18hdU8H982aHUFB9sxDru_wGuXuj51ZBUey4h67aqu28-3qwUnUa_zmBa0cOjZEFPUWvlgJQ5J4JE6VBE1XL-4npig9ip_MNbSBtaq51UuSuCzcrqCzrc0M",
   video: encodeURI("/38 AÑOS~1.mp4"),
+  videoPreviewTime: 6,
+  videoCoverPosition: "center 22%",
 } as const;
 
 export const proceduresPreview = {
   background:
     "https://lh3.googleusercontent.com/aida-public/AB6AXuCAzqP4L8Z7F94Fy1V9GRN3nD_OTcz1kSHSJJPCDQlG0xqcuIxtcQSYRdYZTT54Gq8EsKkSx7EiCYqptAEeExndcAXIZ_jGcal9L2SXX-VqNt9sfzV7-tnn8OeECpp3KzLolcnK1GHX3sEL_URysMIJ5RiwqcvEtwTd0jCtSb34-ztFeEmtxEaCzn7mQoxqgAJVSd2_eR4jVNqRH5Kdq7A2bpIYbo131JC4vHlUKYiktmzYwAIpVDDsl5ZF0iPA5pT0yBemkL2m6R0",
-  videoPoster:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBrNHdJczjYG_Nt2XCpuvEkY-9Y0Wm7_x_AJAzlvCMcCHMMGStQyYT9uttHSoT16j5dA1n00M8FLy90p2utSmIImbKw_Av1leO5vhRQ22aVNEzScGI_Isvdeel90e9OC23k7q7DH9GTzs88L_aP3cXv4Ud-A4xwIQ27xyV-OLDLIllEqTL4GbaMxuQetY9ONT9ytwAZZHqaMdMSHr_7zAAELpCn1E-BoUav_rCKa0fGDRjEcwl7nfmCMO5i6uA5HrRXJwhqX7CgG84",
   video: "/HEMODINAMIA_Y_CATETERISMO.mp4",
+  videoPreviewTime: 10,
   items: [
     { icon: "monitor_heart", title: "Cateterismo", description: "Diagnóstico preciso de la anatomía coronaria.", href: "/procedimientos#cateterismo-diagnostico" },
     { icon: "health_and_safety", title: "Angioplastia Coronaria", description: "Restauración del flujo sanguíneo arterial.", href: "/procedimientos#angioplastia-coronaria" },
@@ -40,9 +39,17 @@ export const proceduresPreview = {
 
 import { blogPosts } from "@/lib/blog-content";
 
-export const blogPreview = blogPosts.slice(0, 3).map(({ slug, title, excerpt, image }) => ({
+const blogPreviewTimes: Record<string, number> = {
+  imaye: 4,
+  "cuidado-post-cateterismo": 5,
+  "hemodinamia-y-cateterismo": 12,
+};
+
+export const blogPreview = blogPosts.slice(0, 3).map(({ slug, title, excerpt, image, video }) => ({
   slug,
   title,
   excerpt,
   image,
+  video,
+  videoPreviewTime: blogPreviewTimes[slug] ?? 3,
 }));

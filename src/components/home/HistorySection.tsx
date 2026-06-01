@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import VideoCover from "@/components/ui/VideoCover";
 import { historySection } from "@/lib/home-content";
 
 export default function HistorySection() {
@@ -53,13 +53,13 @@ export default function HistorySection() {
         </div>
 
         <div className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl bg-inverse-surface">
-          <Image
-            src={historySection.videoPoster}
-            alt="Video institucional - Nuestra Historia"
-            fill
-            className="object-cover opacity-40 transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+          <VideoCover
+            src={historySection.video}
+            previewTime={historySection.videoPreviewTime}
+            objectPosition={historySection.videoCoverPosition}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
+          <div className="absolute inset-0 bg-primary-deep/30" aria-hidden />
           <button
             type="button"
             onClick={() => setOpen(true)}

@@ -15,6 +15,7 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
     image,
     video,
     videoPreviewTime,
+    videoCoverPosition,
     bullets,
     quote,
     reverse,
@@ -58,6 +59,7 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
         image={image}
         video={video}
         videoPreviewTime={videoPreviewTime}
+        videoCoverPosition={videoCoverPosition}
       />
     </article>
   );

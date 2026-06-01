@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import MaterialIcon from "@/components/ui/MaterialIcon";
+import BlogPreviewCard from "@/components/home/BlogPreviewCard";
 import { blogPreview } from "@/lib/home-content";
 
 export default function BlogPreview() {
@@ -24,30 +23,7 @@ export default function BlogPreview() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {blogPreview.map((post) => (
-            <article key={post.slug} className="group">
-              <div className="mb-6 aspect-video overflow-hidden rounded-2xl">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  width={400}
-                  height={225}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="mb-3 text-xl font-semibold leading-tight text-primary transition-colors group-hover:text-primary-dark">
-                {post.title}
-              </h3>
-              <p className="mb-4 line-clamp-2 text-sm text-on-surface-variant">
-                {post.excerpt}
-              </p>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-primary transition-all group-hover:gap-2"
-              >
-                Leer más
-                <MaterialIcon name="arrow_forward" className="text-sm" />
-              </Link>
-            </article>
+            <BlogPreviewCard key={post.slug} {...post} />
           ))}
         </div>
 
