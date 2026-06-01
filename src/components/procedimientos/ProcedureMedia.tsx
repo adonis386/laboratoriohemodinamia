@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { MotionButton } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import { interactiveSpring } from "@/lib/motion";
 import VideoCover from "@/components/ui/VideoCover";
 
 const DEFAULT_PREVIEW_TIME = 3;
@@ -64,16 +66,19 @@ export default function ProcedureMedia({
           />
         ) : null}
         {showPlay ? (
-          <button
+          <MotionButton
             type="button"
             onClick={() => setOpen(true)}
             className="video-overlay-gradient group absolute inset-0 flex cursor-pointer items-center justify-center"
             aria-label={`Reproducir video: ${alt}`}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.96 }}
+            transition={interactiveSpring}
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition group-hover:scale-110">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition-transform group-active:scale-90">
               <MaterialIcon name="play_arrow" className="text-4xl text-white" filled />
             </div>
-          </button>
+          </MotionButton>
         ) : (
           <div className="video-overlay-gradient pointer-events-none absolute inset-0 flex items-center justify-center opacity-50">
             <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md">
@@ -91,14 +96,15 @@ export default function ProcedureMedia({
           aria-label={`Video: ${alt}`}
           onClick={close}
         >
-          <button
+          <MotionButton
             type="button"
+            lightTap
             onClick={close}
-            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
             aria-label="Cerrar video"
           >
             <MaterialIcon name="close" className="text-3xl" />
-          </button>
+          </MotionButton>
           <div
             className="relative w-full max-w-4xl overflow-hidden rounded-xl bg-black"
             onClick={(e) => e.stopPropagation()}

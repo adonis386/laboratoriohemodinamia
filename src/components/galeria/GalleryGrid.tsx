@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { MotionButton } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import { interactiveSpring } from "@/lib/motion";
 
 export type GalleryItem = {
   src: string;
@@ -57,11 +59,14 @@ export default function GalleryGrid({
     <>
       <div className={className}>
         {images.map((item, index) => (
-          <button
+          <MotionButton
             key={item.src}
             type="button"
             onClick={() => setActiveIndex(index)}
             className={`group relative ${aspectClass} w-full cursor-zoom-in overflow-hidden rounded-2xl shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
+            whileHover={{ scale: 1.04, y: -4 }}
+            whileTap={{ scale: 0.94 }}
+            transition={interactiveSpring}
           >
             <Image
               src={item.src}
@@ -78,7 +83,7 @@ export default function GalleryGrid({
                 className="text-4xl text-white opacity-0 transition-opacity group-hover:opacity-100"
               />
             </span>
-          </button>
+          </MotionButton>
         ))}
       </div>
 
@@ -90,39 +95,42 @@ export default function GalleryGrid({
           aria-label={active.alt}
           onClick={close}
         >
-          <button
+          <MotionButton
             type="button"
+            lightTap
             onClick={close}
-            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
             aria-label="Cerrar"
           >
             <MaterialIcon name="close" className="text-3xl" />
-          </button>
+          </MotionButton>
 
           {images.length > 1 && (
             <>
-              <button
+              <MotionButton
                 type="button"
+                lightTap
                 onClick={(e) => {
                   e.stopPropagation();
                   goPrev();
                 }}
-                className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20 md:left-6"
+                className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 md:left-6"
                 aria-label="Imagen anterior"
               >
                 <MaterialIcon name="chevron_left" className="text-3xl" />
-              </button>
-              <button
+              </MotionButton>
+              <MotionButton
                 type="button"
+                lightTap
                 onClick={(e) => {
                   e.stopPropagation();
                   goNext();
                 }}
-                className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20 md:right-6"
+                className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white hover:bg-white/20 md:right-6"
                 aria-label="Imagen siguiente"
               >
                 <MaterialIcon name="chevron_right" className="text-3xl" />
-              </button>
+              </MotionButton>
             </>
           )}
 

@@ -1,9 +1,9 @@
 export const subjectOptions = [
-  { value: "", label: "Seleccione una opción" },
-  { value: "cita", label: "Agendar Cita" },
-  { value: "info", label: "Información de Procedimientos" },
-  { value: "presupuesto", label: "Solicitud de Presupuesto" },
-  { value: "otro", label: "Otros" },
+  { value: "", label: "Seleccione una opción", icon: "list_alt" },
+  { value: "cita", label: "Agendar Cita", icon: "calendar_month" },
+  { value: "info", label: "Información de Procedimientos", icon: "medical_information" },
+  { value: "presupuesto", label: "Solicitud de Presupuesto", icon: "request_quote" },
+  { value: "otro", label: "Otros", icon: "more_horiz" },
 ] as const;
 
 export const contactHero = {

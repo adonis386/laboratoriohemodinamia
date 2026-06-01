@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { MotionButton } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
+import { interactiveSpring } from "@/lib/motion";
 import VideoCover from "@/components/ui/VideoCover";
 import { historySection } from "@/lib/home-content";
 
@@ -60,14 +62,17 @@ export default function HistorySection() {
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-primary-deep/30" aria-hidden />
-          <button
+          <MotionButton
             type="button"
             onClick={() => setOpen(true)}
-            className="relative z-10 rounded-full border border-white/50 bg-white/20 p-6 text-white backdrop-blur-lg transition hover:scale-105 hover:bg-white/40"
+            className="relative z-10 rounded-full border border-white/50 bg-white/20 p-6 text-white backdrop-blur-lg hover:bg-white/40"
             aria-label="Reproducir video: Nuestra Historia"
+            whileHover={{ scale: 1.12 }}
+            whileTap={{ scale: 0.88 }}
+            transition={interactiveSpring}
           >
             <MaterialIcon name="play_arrow" className="text-4xl" filled />
-          </button>
+          </MotionButton>
         </div>
       </div>
 
@@ -79,14 +84,15 @@ export default function HistorySection() {
           aria-label="Video: Nuestra Historia"
           onClick={close}
         >
-          <button
+          <MotionButton
             type="button"
+            lightTap
             onClick={close}
-            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20"
+            className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
             aria-label="Cerrar video"
           >
             <MaterialIcon name="close" className="text-3xl" />
-          </button>
+          </MotionButton>
           <div
             className="relative w-full max-w-4xl overflow-hidden rounded-xl bg-black"
             onClick={(e) => e.stopPropagation()}

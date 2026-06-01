@@ -6,18 +6,33 @@ import ProceduresPreview from "@/components/home/ProceduresPreview";
 import DoctorsPreview from "@/components/home/DoctorsPreview";
 import BlogPreview from "@/components/home/BlogPreview";
 import GalleryPreview from "@/components/home/GalleryPreview";
+import FadeIn from "@/components/motion/FadeIn";
 
 export default function HomePage() {
   return (
     <>
       <HeroCarousel />
-      <AlliesSection />
-      <StrategicPlanSection />
-      <HistorySection />
-      <ProceduresPreview />
-      <DoctorsPreview />
-      <BlogPreview />
-      <GalleryPreview />
+      <FadeIn>
+        <AlliesSection />
+      </FadeIn>
+      <FadeIn>
+        <StrategicPlanSection />
+      </FadeIn>
+      <FadeIn>
+        <HistorySection />
+      </FadeIn>
+      <FadeIn>
+        <ProceduresPreview />
+      </FadeIn>
+      <FadeIn>
+        <DoctorsPreview />
+      </FadeIn>
+      <FadeIn>
+        <BlogPreview />
+      </FadeIn>
+      <FadeIn>
+        <GalleryPreview />
+      </FadeIn>
     </>
   );
 }

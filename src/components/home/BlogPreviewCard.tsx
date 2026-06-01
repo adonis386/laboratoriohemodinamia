@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { motion, useReducedMotion } from "motion/react";
+import { MotionLink } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import VideoCover from "@/components/ui/VideoCover";
+import { interactiveHover, interactiveSpring, interactiveTapLight } from "@/lib/motion";
 
 type BlogPreviewCardProps = {
   slug: string;
@@ -22,8 +24,15 @@ export default function BlogPreviewCard({
   video,
   videoPreviewTime = 3,
 }: BlogPreviewCardProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <article className="group">
+    <motion.article
+      className="group"
+      whileHover={prefersReducedMotion ? undefined : interactiveHover}
+      whileTap={prefersReducedMotion ? undefined : interactiveTapLight}
+      transition={interactiveSpring}
+    >
       <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl bg-black">
         {video ? (
           <VideoCover src={video} previewTime={videoPreviewTime} />
@@ -32,7 +41,7 @@ export default function BlogPreviewCard({
             src={image}
             alt={title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         )}
@@ -50,13 +59,16 @@ export default function BlogPreviewCard({
         {title}
       </h3>
       <p className="mb-4 line-clamp-2 text-sm text-on-surface-variant">{excerpt}</p>
-      <Link
+      <MotionLink
         href={`/blog/${slug}`}
-        className="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-primary transition-all group-hover:gap-2"
+        className="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-primary"
+        whileHover={{ scale: 1.05, x: 6 }}
+        whileTap={{ scale: 0.92 }}
+        transition={interactiveSpring}
       >
         Leer más
         <MaterialIcon name="arrow_forward" className="text-sm" />
-      </Link>
-    </article>
+      </MotionLink>
+    </motion.article>
   );
 }

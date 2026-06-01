@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import BlogCard from "@/components/blog/BlogCard";
+import FadeIn from "@/components/motion/FadeIn";
+import FadeInStagger, { FadeInItem } from "@/components/motion/FadeInStagger";
 import { blogPosts } from "@/lib/blog-content";
 
 export const metadata: Metadata = {
@@ -10,7 +12,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <section className="teal-gradient-bg flex flex-col items-center justify-center px-4 py-16 text-center md:py-24">
+      <FadeIn as="section" className="teal-gradient-bg flex flex-col items-center justify-center px-4 py-16 text-center md:py-24">
         <div className="mx-auto max-w-container">
           <span className="mb-2 block text-sm font-semibold uppercase tracking-widest text-on-primary-container">
             Recursos Médicos Especializados
@@ -21,14 +23,16 @@ export default function BlogPage() {
             laboratorio y consejos para la salud cardiovascular.
           </p>
         </div>
-      </section>
+      </FadeIn>
 
       <main className="mx-auto max-w-container px-4 py-16 md:px-6 md:py-24">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <FadeInStagger className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
-            <BlogCard key={post.slug} {...post} />
+            <FadeInItem key={post.slug}>
+              <BlogCard {...post} />
+            </FadeInItem>
           ))}
-        </div>
+        </FadeInStagger>
       </main>
     </>
   );
