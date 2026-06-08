@@ -37,7 +37,7 @@ export default function ContactForm() {
           <div>
             <h3 className="text-2xl font-semibold text-on-surface">Envíanos un mensaje</h3>
             <p className="mt-1 text-sm text-on-surface-variant">
-              Complete el formulario y nuestro equipo administrativo le responderá a la brevedad.
+              Complete el formulario y le responderemos a la brevedad
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function ContactForm() {
           <MotionButton
             type="submit"
             disabled={submitState === "sending"}
-            className={`flex w-full items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold text-white shadow-md md:w-auto ${
+            className={`flex w-full items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold uppercase tracking-wide text-white shadow-md md:w-auto ${
               submitState === "success"
                 ? "bg-green-600"
                 : "teal-gradient-bg hover:opacity-90"
@@ -146,11 +146,6 @@ export default function ContactForm() {
               </>
             )}
           </MotionButton>
-          <p className="mt-3 flex items-start gap-2 text-xs text-on-surface-variant">
-            <MaterialIcon name="lock" className="mt-0.5 shrink-0 text-sm opacity-60" />
-            Sus datos se utilizarán únicamente para responder su consulta. El envío por correo se
-            conectará en la siguiente fase del proyecto.
-          </p>
         </div>
       </form>
     </div>

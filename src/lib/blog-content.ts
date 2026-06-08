@@ -70,7 +70,7 @@ const postsMeta = [
   },
   {
     slug: "resena-historica",
-    title: "Reseña Histórica del Laboratorio Hemodinamia HCC",
+    title: "Reseña Histórica Laboratorio Hemodinamia HCC",
     excerpt:
       "Casi cuatro décadas de trayectoria en hemodinamia y cardiología intervencionista en el Hospital de Clínicas Caracas.",
     author: "Dr. Enrique Fermín M.",

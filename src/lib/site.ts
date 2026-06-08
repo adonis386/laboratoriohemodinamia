@@ -1,13 +1,13 @@
 export const site = {
   name: "Laboratorio Hemodinamia HCC",
-  tagline: "Especialistas en Hemodinamia y Cateterismo Cardíaco en Caracas",
+  tagline: "hemodinamia y cateterismo",
   slogan: "Al Lado de tu Corazón",
   description:
     "Centro especializado en hemodinamia, cateterismo cardíaco y cardiología intervencionista en Caracas, Venezuela.",
   phone: "+58 424-1787760",
   phoneHref: "tel:+584241787760",
   whatsapp: "584241787760",
-  email: "info@laboratoriohemodinamia.com",
+  email: "infolhhcc@gmail.com",
   address:
     "Avenida Panteón con Avenida Alameda, Urb. San Bernardino Av. Panteón, Caracas 1011, Distrito Federal",
   schedule: {
@@ -19,18 +19,14 @@ export const site = {
       "https://www.instagram.com/laboratoriohemodinamiahcc?igsh=MWwzYWY0YnJ6cmZjcA==",
     linkedin: "https://www.linkedin.com/company/laboratorio-hemodinamia-hcc/",
     whatsapp: "https://wa.me/584241787760",
+    youtube: "https://www.youtube.com",
   },
   contact: {
     addressDetail:
       "Av. Panteón, Hospital de Clínicas Caracas, Piso 2, San Bernardino, Caracas 1010.",
-    phones: [
-      { display: "+58 (212) 508-6111", href: "tel:+582125086111" },
-      { display: "+58 (212) 508-6222", href: "tel:+582125086222" },
-    ],
-    email: "contacto@lhhcc.com",
+    email: "infolhhcc@gmail.com",
     schedule: {
       weekdays: "Lunes a Viernes: 7:00 AM - 7:00 PM",
-      emergency: "Emergencias: 24 Horas",
     },
     mapImage:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBErMGDwf69vEgCYHnp8M465qFU5QixusPqJ59c8rbimpKpUDzdrBtSK05srkeUaUS8tox5PgAdBjh_aDZfXAYU_eiFCRt9tS98X2NvO-Sa3ihRbOmEjonFp6fL5hx5zKc34Jy0HVLNQaFWVBuSjbvgIZI7nIVOnKQ0Dygzi3Ok54r-0l6skNuACHZgDzs_mkipCrxOiax6XjDyioPFuN7bD4pHXkYL12Akiy-fy027nHbBVQ1vVqz9aMBivnfEj-PTM8oI8xsCBr4",
@@ -39,15 +35,17 @@ export const site = {
       subtitle: "Piso 2, Consultorio 204",
     },
   },
+  copyright:
+    "Copyright 2026/@AVC MEDIANET / tu compañía / Laboratorio Hemodinamia HCC. Todos los derechos reservados.",
 } as const;
 
 export const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/directorio", label: "Directorio" },
   { href: "/procedimientos", label: "Procedimientos" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Blog LHHCC" },
   { href: "/galeria", label: "Galería" },
-  { href: "/contacto", label: "Contacto" },
+  { href: "/contacto", label: "Contáctanos" },
 ] as const;
 
 export type Doctor = {

@@ -9,11 +9,11 @@ export const subjectOptions = [
 export const contactHero = {
   title: "Contáctanos",
   subtitle:
-    "Estamos aquí para atender sus consultas sobre servicios hemodinámicos y coordinar su atención médica con la excelencia que nos caracteriza.",
+    "SOLICITE AQUÍ INFORMACION SOBRE NUESTROS PROCEDIMIENTOS DE HEMODINAMIA Y CATETERISMO",
 };
 
 export const contactMap = {
   title: "Nuestra Ubicación",
   description:
-    "Visítenos en el corazón de San Bernardino, en las instalaciones del Hospital de Clínicas Caracas.",
+    "Visítenos en el corazón de San Bernardino, en las instalaciones del Hospital de Clínicas Caracas",
 };

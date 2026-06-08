@@ -12,16 +12,9 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <FadeIn as="section" className="teal-gradient-bg flex flex-col items-center justify-center px-4 py-16 text-center md:py-24">
-        <div className="mx-auto max-w-container">
-          <span className="mb-2 block text-sm font-semibold uppercase tracking-widest text-on-primary-container">
-            Recursos Médicos Especializados
-          </span>
-          <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">Blog LHHCC</h1>
-          <p className="mx-auto max-w-2xl text-lg text-on-primary-container opacity-90">
-            Explora los últimos avances en cardiología intervencionista, noticias del
-            laboratorio y consejos para la salud cardiovascular.
-          </p>
+      <FadeIn as="section" className="teal-gradient-bg px-4 py-16 text-center md:py-20">
+        <div className="mx-auto max-w-container md:px-6">
+          <h1 className="text-4xl font-bold text-white md:text-5xl">Blog LHHCC</h1>
         </div>
       </FadeIn>
 

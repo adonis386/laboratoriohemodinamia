@@ -1,5 +1,4 @@
 import Image from "next/image";
-import MaterialIcon from "@/components/ui/MaterialIcon";
 import { strategicPlan } from "@/lib/home-content";
 
 export default function StrategicPlanSection() {
@@ -19,20 +18,11 @@ export default function StrategicPlanSection() {
           <h2 className="mb-6 text-3xl font-bold md:text-[32px] md:leading-10">
             Plan Estratégico
           </h2>
-          <p className="mb-8 text-lg leading-relaxed opacity-90">
-            Nuestra misión se fundamenta en la excelencia técnica y la empatía humana.
-            Especializados en cateterismo y cardiología intervencionista, implementamos
-            tecnologías de vanguardia para garantizar diagnósticos precisos y tratamientos
-            mínimamente invasivos.
-          </p>
-          <ul className="space-y-4">
-            {strategicPlan.bullets.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <MaterialIcon name="check_circle" className="text-secondary shrink-0" />
-                <span>{item}</span>
-              </li>
+          <div className="space-y-4 text-lg leading-relaxed opacity-90">
+            {strategicPlan.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </section>

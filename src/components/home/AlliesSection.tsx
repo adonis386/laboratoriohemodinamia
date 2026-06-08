@@ -17,9 +17,9 @@ export default function AlliesSection() {
             <Image
               src="/imaye.png"
               alt="IMAYE - Inversiones Médica AYE"
-              width={200}
-              height={120}
-              className="h-14 w-auto object-contain md:h-40"
+              width={320}
+              height={180}
+              className="h-20 w-auto object-contain sm:h-28 md:h-36 lg:h-44"
             />
           </Link>
         </div>

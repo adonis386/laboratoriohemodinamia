@@ -29,27 +29,24 @@ export default function HistorySection() {
       <div className="mx-auto grid max-w-container grid-cols-1 items-center gap-12 px-4 lg:grid-cols-2 md:px-6">
         <div className="rounded-2xl border border-ice-blue-deep bg-white p-8 shadow-sm md:p-10">
           <h2 className="mb-6 text-3xl font-bold text-primary md:text-[32px]">
-            Nuestra Historia
+            {historySection.title}
           </h2>
-          <div className="text-on-surface-variant">
-            <p className="mb-4 leading-relaxed">
-              El Laboratorio de Hemodinamia del HCC nació con la visión de transformar el
-              cuidado cardiovascular en Venezuela. A través de décadas de dedicación, hemos
-              sido pioneros en técnicas intervencionistas que salvan vidas diariamente.
-            </p>
-            <p className="mb-8 italic leading-relaxed">
-              &ldquo;Nuestra prioridad siempre ha sido y será el bienestar del paciente,
-              combinando la tecnología más avanzada con un trato profundamente humano y
-              profesional.&rdquo;
-            </p>
-            <div className="flex items-center gap-4 border-t border-page-gray pt-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-ice-blue-deep">
-                <MaterialIcon name="person" className="text-primary" />
-              </div>
-              <div>
-                <p className="font-bold text-on-surface">Dr. Enrique Fermín M.</p>
-                <p className="text-sm opacity-70">Director Médico LHHCC</p>
-              </div>
+          <div className="space-y-4 text-on-surface-variant">
+            {historySection.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)} className="leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <div className="mt-8 flex items-center gap-4 border-t border-page-gray pt-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-ice-blue-deep">
+              <MaterialIcon name="person" className="text-primary" />
+            </div>
+            <div>
+              <p className="font-bold text-on-surface">{historySection.author}</p>
+              <p className="text-sm uppercase tracking-wide opacity-70">
+                {historySection.authorRole}
+              </p>
             </div>
           </div>
         </div>
@@ -66,7 +63,7 @@ export default function HistorySection() {
             type="button"
             onClick={() => setOpen(true)}
             className="relative z-10 rounded-full border border-white/50 bg-white/20 p-6 text-white backdrop-blur-lg hover:bg-white/40"
-            aria-label="Reproducir video: Nuestra Historia"
+            aria-label="Reproducir video: Reseña Histórica"
             whileHover={{ scale: 1.12 }}
             whileTap={{ scale: 0.88 }}
             transition={interactiveSpring}
@@ -81,7 +78,7 @@ export default function HistorySection() {
           className="fixed inset-0 z-[300] flex items-center justify-center bg-black/92 p-4"
           role="dialog"
           aria-modal="true"
-          aria-label="Video: Nuestra Historia"
+          aria-label="Video: Reseña Histórica"
           onClick={close}
         >
           <MotionButton

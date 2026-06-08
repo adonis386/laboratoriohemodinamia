@@ -13,10 +13,7 @@ export default function DirectorioPage() {
     <main className="min-h-screen bg-gradient-to-br from-white to-ice-blue-mid">
       <div className="mx-auto max-w-container px-4 py-16 md:px-6 md:py-24">
         <section className="mb-10 text-center md:text-left">
-          <h1 className="mb-2 text-4xl font-bold text-primary md:text-5xl">Directorio médico</h1>
-          <p className="text-lg text-on-surface-variant">
-            Información de contacto del cuerpo médico de alta especialidad.
-          </p>
+          <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">Directorio médico</h1>
           <div className="mx-auto mt-4 h-1 w-24 rounded-full teal-gradient-bg md:mx-0" />
         </section>
 
