@@ -51,7 +51,7 @@ export default function HistorySection() {
           </div>
         </div>
 
-        <div className="group relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl bg-inverse-surface">
+        <div className="group relative mx-auto flex aspect-[9/16] w-full max-w-[280px] items-center justify-center overflow-hidden rounded-2xl bg-inverse-surface sm:max-w-xs md:max-w-sm">
           <VideoCover
             src={historySection.video}
             previewTime={historySection.videoPreviewTime}
@@ -91,7 +91,7 @@ export default function HistorySection() {
             <MaterialIcon name="close" className="text-3xl" />
           </MotionButton>
           <div
-            className="relative w-full max-w-4xl overflow-hidden rounded-xl bg-black"
+            className="relative w-full max-w-sm overflow-hidden rounded-xl bg-black"
             onClick={(e) => e.stopPropagation()}
           >
             <video
@@ -99,7 +99,7 @@ export default function HistorySection() {
               controls
               autoPlay
               playsInline
-              className="max-h-[85vh] w-full"
+              className="aspect-[9/16] max-h-[85vh] w-full object-contain"
             >
               Tu navegador no soporta la reproducción de video.
             </video>
