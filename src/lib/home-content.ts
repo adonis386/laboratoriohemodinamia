@@ -1,10 +1,33 @@
 export const heroSlides = [
-  { src: "/hero.png", alt: "Angioplastia coronaria - Laboratorio Hemodinamia HCC" },
-  { src: "/hero-2.png", alt: "Procedimiento de hemodinamia en sala especializada" },
-  { src: "/hero-3.png", alt: "Equipo médico en cardiología intervencionista" },
-  { src: "/hero-4.png", alt: "Cateterismo cardíaco con tecnología avanzada" },
-  { src: "/hero-5.png", alt: "Laboratorio de hemodinamia HCC" },
-  { src: "/hero-6.png", alt: "Atención cardiovascular de alta especialidad" },
+  {
+    src: "/hero_(7).png",
+    alt: "Litotricia intravascular - Laboratorio Hemodinamia HCC",
+    objectPosition: "center 68%",
+  },
+  {
+    src: "/hero_(8).png",
+    alt: "Procedimiento de hemodinamia en sala especializada - Laboratorio Hemodinamia HCC",
+  },
+  {
+    src: "/hero_(9).png",
+    alt: "Equipo médico en cardiología intervencionista - Laboratorio Hemodinamia HCC",
+  },
+  {
+    src: "/hero_(10).png",
+    alt: "Cateterismo cardíaco con tecnología avanzada - Laboratorio Hemodinamia HCC",
+  },
+  {
+    src: "/hero_(11).png",
+    alt: "Angioplastia coronaria - Laboratorio Hemodinamia HCC",
+  },
+  {
+    src: "/hero_(12).png",
+    alt: "Laboratorio de hemodinamia HCC - Atención cardiovascular especializada",
+  },
+  {
+    src: "/hero_(13).png",
+    alt: "Hemodinamia y cateterismo de alta especialidad - Laboratorio Hemodinamia HCC",
+  },
 ] as const;
 
 export const strategicPlan = {

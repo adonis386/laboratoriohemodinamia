@@ -43,29 +43,12 @@ export default function HeroCarousel() {
   }, []);
 
   useEffect(() => {
-    const header = document.querySelector("header");
-    if (!header) return;
-
-    const syncHeaderHeight = () => {
-      document.documentElement.style.setProperty(
-        "--site-header-height",
-        `${header.getBoundingClientRect().height}px`
-      );
-    };
-
-    syncHeaderHeight();
-    const observer = new ResizeObserver(syncHeaderHeight);
-    observer.observe(header);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
     const timer = setInterval(() => move(1), 5000);
     return () => clearInterval(timer);
   }, [move]);
 
   return (
-    <section className="relative isolate w-full overflow-hidden">
+    <section className="relative isolate -mt-[var(--site-header-height)] w-full overflow-hidden">
       <motion.div
         className="relative w-full overflow-hidden"
         initial={prefersReducedMotion ? false : { opacity: 0 }}
@@ -95,6 +78,11 @@ export default function HeroCarousel() {
                     alt={slide.alt}
                     fill
                     className="object-cover"
+                    style={
+                      "objectPosition" in slide
+                        ? { objectPosition: slide.objectPosition }
+                        : undefined
+                    }
                     priority={index === 0}
                     quality={90}
                     sizes="100vw"
@@ -108,6 +96,11 @@ export default function HeroCarousel() {
               alt={heroSlides[0].alt}
               fill
               className="object-cover"
+              style={
+                "objectPosition" in heroSlides[0]
+                  ? { objectPosition: heroSlides[0].objectPosition }
+                  : undefined
+              }
               priority
               sizes="100vw"
             />

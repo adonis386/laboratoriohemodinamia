@@ -40,7 +40,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col antialiased">
         <MotionProvider>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-[var(--site-header-height)]">{children}</main>
           <Footer />
           <WhatsAppWidget />
         </MotionProvider>

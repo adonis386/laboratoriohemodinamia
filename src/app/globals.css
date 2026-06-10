@@ -94,8 +94,8 @@ body {
 }
 
 .hero-viewport {
-  height: calc(100dvh - var(--site-header-height));
-  max-height: calc(100dvh - var(--site-header-height));
+  height: 100dvh;
+  max-height: 100dvh;
 }
 
 .gradient-hero {
