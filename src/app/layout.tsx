@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: "/logo-original.ico",
+    shortcut: "/logo-original.ico",
+  },
 };
 
 export const viewport: Viewport = {
