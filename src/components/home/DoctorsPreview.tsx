@@ -8,9 +8,6 @@ export default function DoctorsPreview() {
     <section id="directorio" className="bg-surface-container-low py-16 md:py-24">
       <div className="mx-auto mb-10 max-w-container px-4 text-center md:px-6">
         <h2 className="mb-4 text-3xl font-bold text-primary md:text-[32px]">Directorio médico</h2>
-        <p className="mx-auto max-w-2xl text-on-surface-variant">
-          Información de contacto del cuerpo médico de alta especialidad.
-        </p>
       </div>
 
       <div className="mx-auto max-w-4xl px-4 md:px-6">

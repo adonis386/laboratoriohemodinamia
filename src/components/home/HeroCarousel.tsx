@@ -38,30 +38,26 @@ export default function HeroCarousel() {
     };
 
     updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(viewport);
+    return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => move(1), 5000);
-    return () => clearInterval(timer);
-  }, [move]);
-
   return (
-    <section className="relative isolate -mt-[var(--site-header-height)] w-full overflow-hidden">
+    <section className="relative isolate w-full max-w-full overflow-hidden bg-primary-deep lg:-mt-[var(--site-header-height)]">
       <motion.div
-        className="relative w-full overflow-hidden"
+        className="relative w-full max-w-full overflow-hidden"
         initial={prefersReducedMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={pageEnterTransition}
       >
         <div
           ref={viewportRef}
-          className="hero-viewport relative w-full overflow-hidden"
+          className="hero-viewport relative w-full max-w-full overflow-hidden"
         >
           {slideWidth > 0 ? (
             <div
-              className="absolute inset-y-0 left-0 flex transition-transform duration-700 ease-out"
+              className="absolute inset-0 flex transition-transform duration-700 ease-out"
               style={{
                 width: slideWidth * total,
                 transform: `translate3d(-${current * slideWidth}px, 0, 0)`,
@@ -77,7 +73,7 @@ export default function HeroCarousel() {
                     src={slide.src}
                     alt={slide.alt}
                     fill
-                    className="object-cover"
+                    className="object-contain lg:object-cover"
                     style={
                       "objectPosition" in slide
                         ? { objectPosition: slide.objectPosition }
@@ -95,7 +91,7 @@ export default function HeroCarousel() {
               src={heroSlides[0].src}
               alt={heroSlides[0].alt}
               fill
-              className="object-cover"
+              className="object-contain lg:object-cover"
               style={
                 "objectPosition" in heroSlides[0]
                   ? { objectPosition: heroSlides[0].objectPosition }
@@ -108,36 +104,36 @@ export default function HeroCarousel() {
         </div>
       </motion.div>
 
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-4 md:px-6">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-2 sm:px-4 lg:px-6">
         <MotionButton
           type="button"
           lightTap
           onClick={() => move(-1)}
-          className="pointer-events-auto rounded-full bg-white/20 p-3 text-white backdrop-blur-md hover:bg-white/40"
+          className="pointer-events-auto rounded-full bg-black/30 p-2 text-white backdrop-blur-sm hover:bg-black/45 lg:bg-white/20 lg:p-3 lg:backdrop-blur-md lg:hover:bg-white/40"
           aria-label="Slide anterior"
         >
-          <MaterialIcon name="chevron_left" />
+          <MaterialIcon name="chevron_left" className="text-2xl lg:text-3xl" />
         </MotionButton>
         <MotionButton
           type="button"
           lightTap
           onClick={() => move(1)}
-          className="pointer-events-auto rounded-full bg-white/20 p-3 text-white backdrop-blur-md hover:bg-white/40"
+          className="pointer-events-auto rounded-full bg-black/30 p-2 text-white backdrop-blur-sm hover:bg-black/45 lg:bg-white/20 lg:p-3 lg:backdrop-blur-md lg:hover:bg-white/40"
           aria-label="Slide siguiente"
         >
-          <MaterialIcon name="chevron_right" />
+          <MaterialIcon name="chevron_right" className="text-2xl lg:text-3xl" />
         </MotionButton>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 gap-3 md:bottom-8">
+      <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2 lg:bottom-8 lg:gap-3">
         {heroSlides.map((slide, idx) => (
           <MotionButton
             key={slide.src}
             type="button"
             lightTap
             onClick={() => goTo(idx)}
-            className={`h-3 w-3 rounded-full bg-white ${
-              idx === current ? "opacity-100" : "opacity-40"
+            className={`rounded-full bg-white ${
+              idx === current ? "h-2.5 w-2.5 opacity-100 lg:h-3 lg:w-3" : "h-2 w-2 opacity-40 lg:h-3 lg:w-3"
             }`}
             aria-label={`Ir al slide ${idx + 1}`}
           />
@@ -146,4 +142,3 @@ export default function HeroCarousel() {
     </section>
   );
 }
-

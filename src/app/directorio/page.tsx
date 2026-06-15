@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Directorio médico",
+  title: "Directorio Médico LHHCC",
   description: "Directorio médico del Laboratorio Hemodinamia HCC.",
 };
 
@@ -13,7 +13,7 @@ export default function DirectorioPage() {
     <main className="min-h-screen bg-gradient-to-br from-white to-ice-blue-mid">
       <div className="mx-auto max-w-container px-4 py-16 md:px-6 md:py-24">
         <section className="mb-10 text-center md:text-left">
-          <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">Directorio médico</h1>
+          <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">Directorio Médico LHHCC</h1>
           <div className="mx-auto mt-4 h-1 w-24 rounded-full teal-gradient-bg md:mx-0" />
         </section>
 

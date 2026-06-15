@@ -1,6 +1,6 @@
 export const site = {
   name: "Laboratorio Hemodinamia HCC",
-  tagline: "hemodinamia y cateterismo",
+  tagline: "Hemodinamia y cateterismo",
   slogan: "Al Lado de tu Corazón",
   description:
     "Centro especializado en hemodinamia, cateterismo cardíaco y cardiología intervencionista en Caracas, Venezuela.",
@@ -11,8 +11,7 @@ export const site = {
   address:
     "Avenida Panteón con Avenida Alameda, Urb. San Bernardino Av. Panteón, Caracas 1011, Distrito Federal",
   schedule: {
-    weekdays: "Lunes a Viernes: 8:00 AM - 6:00 PM",
-    saturday: "Sábados: 9:00 AM - 1:00 PM",
+    weekdays: "Lunes a Viernes: 8:00 AM - 5:00 PM",
   },
   social: {
     instagram:
@@ -26,7 +25,7 @@ export const site = {
       "Av. Panteón, Hospital de Clínicas Caracas, Piso 2, San Bernardino, Caracas 1010.",
     email: "infolhhcc@gmail.com",
     schedule: {
-      weekdays: "Lunes a Viernes: 7:00 AM - 7:00 PM",
+      weekdays: "Lunes a Viernes: 8:00 AM - 5:00 PM",
     },
     mapImage:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBErMGDwf69vEgCYHnp8M465qFU5QixusPqJ59c8rbimpKpUDzdrBtSK05srkeUaUS8tox5PgAdBjh_aDZfXAYU_eiFCRt9tS98X2NvO-Sa3ihRbOmEjonFp6fL5hx5zKc34Jy0HVLNQaFWVBuSjbvgIZI7nIVOnKQ0Dygzi3Ok54r-0l6skNuACHZgDzs_mkipCrxOiax6XjDyioPFuN7bD4pHXkYL12Akiy-fy027nHbBVQ1vVqz9aMBivnfEj-PTM8oI8xsCBr4",
@@ -36,15 +35,15 @@ export const site = {
     },
   },
   copyright:
-    "Copyright 2026/@AVC MEDIANET / tu compañía / Laboratorio Hemodinamia HCC. Todos los derechos reservados.",
+    "Copyright 2026 @AVC MEDIANET / Vector Studios AI / Laboratorio Hemodinamia HCC. Todos los derechos reservados.",
 } as const;
 
 export const navLinks = [
   { href: "/", label: "Inicio" },
-  { href: "/directorio", label: "Directorio" },
-  { href: "/procedimientos", label: "Procedimientos" },
+  { href: "/directorio", label: "Directorio médico LHHCC" },
+  { href: "/procedimientos", label: "Nuestros procedimientos" },
   { href: "/blog", label: "Blog LHHCC" },
-  { href: "/galeria", label: "Galería" },
+  { href: "/galeria", label: "Galería LHHCC" },
   { href: "/contacto", label: "Contáctanos" },
 ] as const;
 

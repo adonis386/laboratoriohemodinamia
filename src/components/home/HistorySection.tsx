@@ -47,6 +47,7 @@ export default function HistorySection() {
               <p className="text-sm uppercase tracking-wide opacity-70">
                 {historySection.authorRole}
               </p>
+              <p className="text-sm opacity-70">{historySection.authorDate}</p>
             </div>
           </div>
         </div>

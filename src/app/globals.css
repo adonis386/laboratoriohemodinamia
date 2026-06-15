@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --site-header-height: 5.5rem;
+  --site-header-height: 6rem;
   --color-primary: #005a77;
   --color-primary-container: #007498;
   --color-primary-light: #009fc2;
@@ -89,13 +89,22 @@ body {
 
 @media (min-width: 768px) {
   :root {
-    --site-header-height: 7.5rem;
+    --site-header-height: 9rem;
   }
 }
 
 .hero-viewport {
-  height: 100dvh;
-  max-height: 100dvh;
+  aspect-ratio: 2020 / 1024;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .hero-viewport {
+    aspect-ratio: auto;
+    height: 100dvh;
+    max-height: 100dvh;
+  }
 }
 
 .gradient-hero {
