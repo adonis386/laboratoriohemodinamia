@@ -1,3 +1,6 @@
+import { blogPosts } from "@/lib/blog-content";
+import { proceduresPreviewSummaries } from "@/lib/procedimientos-content";
+
 export const heroSlides = [
   {
     src: "/hero_(7).png",
@@ -32,12 +35,14 @@ export const heroSlides = [
 
 export const strategicPlan = {
   image: "/FOTO_DE_PLAN_ESTRATEGICO.png",
+  title: "Nuestro Plan Estratégico: Valor, Innovación y Cercanía",
   paragraphs: [
-    "Nos enfocamos en agregar un alto valor optimizando la experiencia de nuestros pacientes, garantizando que cada procedimiento de hemodinamia y cateterismo se realice con una precisión inigualable, minimizando riesgos y acelerando su recuperación. Nuestro laboratorio de hemodinamia cuenta con tecnología de última generación para ofrecer los mejores resultados.",
-    "Nuestra meta es consolidar aún más nuestra posición como líder en formación médica en el campo de la hemodinamia. Seguiremos impulsando el mejoramiento continuo de nuestro equipo a través de fellows, tenemos una participación y acercamiento activo a tecnologías innovadoras y a los eventos de cardiología intervencionista más relevantes. Esto nos permitirá integrar los últimos avances en hemodinamia y mantenernos a la vanguardia global.",
-    "Aspiramos expandir nuestro impacto, no solo en la cardiología, sino también en otros campos vasculares como cerebro, riñones y miembros inferiores, aprovechando nuestras capacidades de cateterismo y hemodinamia. Nuestro objetivo es que el Laboratorio Hemodinamia HCC sea reconocido como un centro de autoridad y confianza más allá de nuestras fronteras, donde la innovación tecnológica, la experiencia, la gestión de conocimiento y la calidez humana se unen para proteger el corazón vida de nuestros pacientes",
-    "Este es nuestro compromiso: ser aliado incondicional en la salud del corazón, con una excelencia que evoluciona continuamente, Al Lado de tu Corazón®.",
+    "Nos enfocamos en agregar un alto valor optimizando la experiencia de nuestros pacientes, garantizando que cada procedimiento de hemodinamia y cateterismo se realice con una precisión inigualable, minimizando riesgos y acelerando su recuperación.",
+    "Nuestra meta es consolidar aún más nuestra posición como líder en formación médica. Seguiremos impulsando el mejoramiento continuo de nuestro equipo a través de fellows, tenemos una participación y acercamiento activo a tecnologías innovadoras y a los eventos de cardiología intervencionista más relevantes. Esto nos permitirá integrar los últimos avances y mantenernos a la vanguardia global.",
+    "Aspiramos expandir nuestro impacto, no solo en la cardiología, sino también en otros campos vasculares como cerebro, riñones y miembros inferiores, aprovechando nuestras capacidades de cateterismo. Nuestro objetivo es que el Laboratorio Hemodinamia HCC sea reconocido como un centro de autoridad y confianza más allá de nuestras fronteras, donde la innovación tecnológica, la experiencia, la gestión de conocimiento y la calidez humana se unen para proteger el corazón vida de nuestros pacientes",
+    "Este es nuestro compromiso: ser aliado incondicional en la salud del corazón, con una excelencia que evoluciona continuamente.",
   ],
+  slogan: "Al Lado de tu Corazón®",
 } as const;
 
 export const historySection = {
@@ -55,9 +60,9 @@ export const historySection = {
   author: "Dr. Enrique Fermín M.",
   authorRole: "Jefe Laboratorio Hemodinamia HCC",
   authorDate: "Julio 2025.",
-  video: encodeURI("/38 AÑOS~1.mp4"),
-  videoPreviewTime: 6,
-  videoCoverPosition: "center 22%",
+  video: "/HISTORIA_97.mp4",
+  coverImage: "/blog/portada-resena-historica.png",
+  coverPosition: "center 32%",
 } as const;
 
 export const proceduresPreview = {
@@ -66,16 +71,44 @@ export const proceduresPreview = {
   video: "/HEMODINAMIA_Y_CATETERISMO.mp4",
   videoPreviewTime: 10,
   items: [
-    { icon: "monitor_heart", title: "Cateterismo", description: "Diagnóstico preciso de la anatomía coronaria.", href: "/procedimientos#cateterismo-diagnostico" },
-    { icon: "health_and_safety", title: "Angioplastia Coronaria", description: "Restauración del flujo sanguíneo arterial.", href: "/procedimientos#angioplastia-coronaria" },
-    { icon: "footprint", title: "Angioplastia Periférica", description: "Tratamiento de arterias en extremidades.", href: "/procedimientos#angioplastia-periferica" },
-    { icon: "bolt", title: "Litotricia", description: "Tecnología de ondas para calcificaciones.", href: "/procedimientos#litotricia" },
-    { icon: "settings_input_component", title: "EVAR/TEVAR", description: "Reparación endovascular de aneurismas.", href: "/procedimientos#endoprotesis" },
-    { icon: "favorite", title: "Válvulas Cardíacas", description: "Sustitución valvular percutánea avanzada.", href: "/procedimientos#valvulas" },
+    {
+      icon: "monitor_heart",
+      title: "Cateterismo",
+      description: proceduresPreviewSummaries["cateterismo-diagnostico"],
+      href: "/procedimientos#cateterismo-diagnostico",
+    },
+    {
+      icon: "health_and_safety",
+      title: "Angioplastia Coronaria",
+      description: proceduresPreviewSummaries["angioplastia-coronaria"],
+      href: "/procedimientos#angioplastia-coronaria",
+    },
+    {
+      icon: "footprint",
+      title: "Angioplastia Periférica",
+      description: proceduresPreviewSummaries["angioplastia-periferica"],
+      href: "/procedimientos#angioplastia-periferica",
+    },
+    {
+      icon: "bolt",
+      title: "Litotricia",
+      description: proceduresPreviewSummaries.litotricia,
+      href: "/procedimientos#litotricia",
+    },
+    {
+      icon: "settings_input_component",
+      title: "EVAR/TEVAR",
+      description: proceduresPreviewSummaries.endoprotesis,
+      href: "/procedimientos#endoprotesis",
+    },
+    {
+      icon: "favorite",
+      title: "Válvulas Cardíacas",
+      description: proceduresPreviewSummaries.valvulas,
+      href: "/procedimientos#valvulas",
+    },
   ],
 } as const;
-
-import { blogPosts } from "@/lib/blog-content";
 
 const blogPreviewTimes: Record<string, number> = {
   imaye: 4,

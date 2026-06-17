@@ -1,13 +1,14 @@
 type BlogArticleVideoProps = {
   src: string;
   title: string;
+  aspectClass?: string;
 };
 
-export default function BlogArticleVideo({ src, title }: BlogArticleVideoProps) {
+export default function BlogArticleVideo({ src, title, aspectClass }: BlogArticleVideoProps) {
   return (
     <div className="mb-10 overflow-hidden rounded-2xl border border-outline-variant/20 bg-black shadow-lg">
       <video
-        className="aspect-video w-full object-contain"
+        className={`w-full object-contain ${aspectClass ?? "aspect-video"}`}
         controls
         preload="metadata"
         playsInline

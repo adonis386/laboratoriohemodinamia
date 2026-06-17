@@ -13,6 +13,7 @@ type BlogCardProps = {
   author: string;
   date: string;
   image: string;
+  imagePosition?: string;
   video?: string;
 };
 
@@ -23,6 +24,7 @@ export default function BlogCard({
   author,
   date,
   image,
+  imagePosition,
   video,
 }: BlogCardProps) {
   const prefersReducedMotion = useReducedMotion();
@@ -41,6 +43,7 @@ export default function BlogCard({
           width={400}
           height={192}
           className="h-full w-full object-cover"
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
         />
         {video && (
           <span

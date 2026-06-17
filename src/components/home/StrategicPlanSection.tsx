@@ -16,12 +16,13 @@ export default function StrategicPlanSection() {
         </div>
         <div className="w-full md:w-1/2">
           <h2 className="mb-6 text-3xl font-bold md:text-[32px] md:leading-10">
-            Plan Estratégico
+            {strategicPlan.title}
           </h2>
           <div className="space-y-4 text-lg leading-relaxed opacity-90">
             {strategicPlan.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 48)}>{paragraph}</p>
             ))}
+            <p className="font-bold">{strategicPlan.slogan}</p>
           </div>
         </div>
       </div>

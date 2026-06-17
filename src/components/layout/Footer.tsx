@@ -12,13 +12,8 @@ const menuLinks = [
 function RegisteredSlogan() {
   return (
     <p className="mt-2 text-sm font-bold text-white">
-      Al lado de tú corazo
-      <span className="relative inline-block">
-        n
-        <sup className="absolute -top-2 left-1/2 -translate-x-1/2 text-[0.55em] font-normal leading-none">
-          ®
-        </sup>
-      </span>
+      Al lado de tú corazón
+      <sup className="ml-px align-super text-[0.65em] font-normal leading-none">®</sup>
     </p>
   );
 }

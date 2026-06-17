@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { MotionButton } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { interactiveSpring } from "@/lib/motion";
-import VideoCover from "@/components/ui/VideoCover";
 import { historySection } from "@/lib/home-content";
 
 export default function HistorySection() {
@@ -53,11 +53,13 @@ export default function HistorySection() {
         </div>
 
         <div className="group relative mx-auto flex aspect-[9/16] w-full max-w-[280px] items-center justify-center overflow-hidden rounded-2xl bg-inverse-surface sm:max-w-xs md:max-w-sm">
-          <VideoCover
-            src={historySection.video}
-            previewTime={historySection.videoPreviewTime}
-            objectPosition={historySection.videoCoverPosition}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          <Image
+            src={historySection.coverImage}
+            alt="Portada: Reseña Histórica"
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            style={{ objectPosition: historySection.coverPosition }}
+            sizes="(max-width: 640px) 280px, 384px"
           />
           <div className="absolute inset-0 bg-primary-deep/30" aria-hidden />
           <MotionButton

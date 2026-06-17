@@ -40,7 +40,7 @@ export const site = {
 
 export const navLinks = [
   { href: "/", label: "Inicio" },
-  { href: "/directorio", label: "Directorio médico LHHCC" },
+  { href: "/directorio", label: "Directorio Médico LHHCC" },
   { href: "/procedimientos", label: "Nuestros procedimientos" },
   { href: "/blog", label: "Blog LHHCC" },
   { href: "/galeria", label: "Galería LHHCC" },

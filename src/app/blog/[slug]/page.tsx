@@ -30,7 +30,14 @@ export default async function BlogArticlePage({ params }: Props) {
   return (
     <article>
       <div className="relative h-64 w-full md:h-80">
-        <Image src={post.image} alt={post.title} fill className="object-cover" priority />
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className="object-cover"
+          style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
+          priority
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
       </div>
 
@@ -56,7 +63,13 @@ export default async function BlogArticlePage({ params }: Props) {
 
         <h1 className="mb-8 text-3xl font-bold text-primary md:text-4xl">{post.title}</h1>
 
-        {post.video && <BlogArticleVideo src={post.video} title={post.title} />}
+        {post.video && (
+          <BlogArticleVideo
+            src={post.video}
+            title={post.title}
+            aspectClass={slug === "resena-historica" ? "aspect-[9/16] max-w-sm mx-auto" : undefined}
+          />
+        )}
 
         <BlogArticleBody paragraphs={post.paragraphs} />
       </div>

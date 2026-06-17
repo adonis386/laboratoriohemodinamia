@@ -13,6 +13,7 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
     title,
     description,
     image,
+    coverImage,
     video,
     videoPreviewTime,
     videoCoverPosition,
@@ -57,6 +58,7 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
       <ProcedureMedia
         alt={title}
         image={image}
+        coverImage={coverImage}
         video={video}
         videoPreviewTime={videoPreviewTime}
         videoCoverPosition={videoCoverPosition}

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Directorio Médico LHHCC",
-  description: "Directorio médico del Laboratorio Hemodinamia HCC.",
+  description: "Directorio Médico del Laboratorio Hemodinamia HCC.",
 };
 
 const directorioImage = "/DIRECTORIO_MEDICO.png";
@@ -20,7 +20,7 @@ export default function DirectorioPage() {
         <section className="overflow-hidden rounded-2xl border border-ice-blue-deep bg-white shadow-lg">
           <Image
             src={directorioImage}
-            alt="Directorio médico del Laboratorio Hemodinamia HCC con nombres y teléfonos del cuerpo médico"
+            alt="Directorio Médico del Laboratorio Hemodinamia HCC con nombres y teléfonos del cuerpo médico"
             width={1280}
             height={1800}
             quality={90}

@@ -4,7 +4,7 @@ import ProcedureBlock from "@/components/procedimientos/ProcedureBlock";
 import ProceduresSidebar from "@/components/procedimientos/ProceduresSidebar";
 import FadeIn from "@/components/motion/FadeIn";
 import FadeInStagger, { FadeInItem } from "@/components/motion/FadeInStagger";
-import { proceduresList } from "@/lib/procedimientos-content";
+import { proceduresIntro, proceduresList } from "@/lib/procedimientos-content";
 
 export const metadata: Metadata = {
   title: "Procedimientos",
@@ -25,10 +25,8 @@ export default function ProcedimientosPage() {
       <FadeIn as="section" className="bg-gradient-to-b from-ice-blue-light to-white py-16 md:py-24">
         <div className="mx-auto max-w-container px-4 text-center md:px-6">
           <h1 className="mb-4 text-4xl font-bold text-primary md:text-5xl">Procedimientos</h1>
-          <p className="mx-auto max-w-2xl text-lg text-on-surface-variant">
-            Tecnología de vanguardia y especialistas altamente calificados para el
-            diagnóstico y tratamiento de enfermedades cardiovasculares con la máxima
-            precisión.
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-on-surface-variant">
+            {proceduresIntro}
           </p>
         </div>
       </FadeIn>

@@ -7,7 +7,7 @@ export default function DoctorsPreview() {
   return (
     <section id="directorio" className="bg-surface-container-low py-16 md:py-24">
       <div className="mx-auto mb-10 max-w-container px-4 text-center md:px-6">
-        <h2 className="mb-4 text-3xl font-bold text-primary md:text-[32px]">Directorio médico</h2>
+        <h2 className="mb-4 text-3xl font-bold text-primary md:text-[32px]">Directorio Médico</h2>
       </div>
 
       <div className="mx-auto max-w-4xl px-4 md:px-6">
@@ -17,7 +17,7 @@ export default function DoctorsPreview() {
         >
           <Image
             src={directorioImage}
-            alt="Directorio médico - ver listado completo"
+            alt="Directorio Médico - ver listado completo"
             width={900}
             height={1200}
             quality={90}

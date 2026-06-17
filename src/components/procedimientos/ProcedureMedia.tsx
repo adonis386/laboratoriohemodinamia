@@ -15,6 +15,7 @@ const DEFAULT_COVER_POSITION = "center 28%";
 type ProcedureMediaProps = {
   alt: string;
   image?: string;
+  coverImage?: string;
   video?: string;
   /** Segundo del video para la carátula (fragmento del mismo archivo) */
   videoPreviewTime?: number;
@@ -23,6 +24,7 @@ type ProcedureMediaProps = {
 
 export default function ProcedureMedia({
   image,
+  coverImage,
   alt,
   video,
   videoPreviewTime = DEFAULT_PREVIEW_TIME,
@@ -47,22 +49,24 @@ export default function ProcedureMedia({
 
   const showPlay = Boolean(video);
 
+  const poster = coverImage ?? image;
+
   return (
     <>
       <div className="relative min-h-[300px] bg-surface-container-low lg:w-1/2">
-        {video ? (
+        {poster ? (
+          <Image
+            src={poster}
+            alt={alt}
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        ) : video ? (
           <VideoCover
             src={video}
             previewTime={videoPreviewTime}
             objectPosition={videoCoverPosition}
-          />
-        ) : image ? (
-          <Image
-            src={image}
-            alt={alt}
-            fill
-            className="object-cover object-[center_28%]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         ) : null}
         {showPlay ? (

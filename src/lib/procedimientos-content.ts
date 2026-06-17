@@ -5,6 +5,8 @@ export type ProcedureItem = {
   description: string;
   /** Imagen de respaldo cuando no hay video (ej. válvulas) */
   image?: string;
+  /** Portada del video (mismas imágenes de la presentación) */
+  coverImage?: string;
   /** Ruta en public/, ej. /ENDOPROTESIS_AORTICA.mp4 */
   video?: string;
   /** Segundo del video usado como carátula (fragmento del mismo archivo) */
@@ -17,8 +19,9 @@ export type ProcedureItem = {
   altBg?: boolean;
 };
 
-/** Encuadre para videos con el Dr. (cara visible, sin recorte superior) */
-const faceCover = "center 28%";
+/** Texto introductorio — PROCEDIMIENTOS_WEB_LHHCC.odt */
+export const proceduresIntro =
+  "En el Laboratorio de Hemodinamia HCC, estamos comprometidos con la salud cardiovascular de nuestros pacientes, ofreciéndoles los últimos avances tecnológicos y nuestra experiencia acumulada en más de treinta (30) años de labor ininterrumpida, en el diagnóstico y tratamiento de las afecciones cardiovasculares, a través de cateterismo.";
 
 export const proceduresList: ProcedureItem[] = [
   {
@@ -26,64 +29,58 @@ export const proceduresList: ProcedureItem[] = [
     number: 1,
     title: "Cateterismo Cardíaco Diagnóstico",
     description:
-      "Procedimiento mínimamente invasivo que permite medir las presiones en el corazón y en los vasos sanguíneos, precisar si hay obstrucciones en las arterias o en las venas. Garantiza menos molestias, recuperación más rápida y diagnóstico preciso en tiempo real.",
-    bullets: ["Precisión diagnóstica superior", "Recuperación rápida (2-4 horas)"],
+      "El cateterismo cardíaco diagnóstico nos permite medir las presiones en el corazón y en los vasos sanguíneos, precisar si hay obstrucciones en las arterias o en las venas. Es un procedimiento mínimamente invasivo, lo que garantiza menos molestias y complicaciones, junto con una recuperación más rápida. Se obtiene un diagnóstico preciso en tiempo real, permitiendo diseñar el plan de tratamiento más adecuado para cada caso clínico.",
+    coverImage: "/procedimientos/portada-cateterismo.png",
     video: "/CATETERISMO_CARDIACO_DIAGNOSTICO.mp4",
-    videoPreviewTime: 4,
-    videoCoverPosition: "center 22%",
   },
   {
     id: "angioplastia-coronaria",
     number: 2,
     title: "Angioplastia Coronaria",
     description:
-      "Tratamiento de obstrucciones en arterias coronarias mediante dilatación y colocación de stents, restableciendo el flujo sanguíneo. Es el tratamiento de elección para el infarto agudo del miocardio.",
+      "Cuando obstrucciones en las arterias coronarias, las mismas se pueden tratar mediante la dilatación de las mismas y la colocación, en la mayoría de los casos, de unas mallas metálicas, denominadas Stent, lo cual permite el restablecimiento del flujo sanguíneo normal en las arterias. Dicho procedimiento es el tratamiento de elección, hoy en día, para el tratamiento del infarto agudo del miocardio, traduciéndose en mejoría de la sobrevida y un egreso precoz de los pacientes.",
     reverse: true,
     altBg: true,
+    coverImage: "/procedimientos/portada-angioplastia-coronaria.png",
     video: "/ANGIOPLASTIA_CORONARIA.mp4",
-    videoPreviewTime: 12,
-    videoCoverPosition: "center 22%",
   },
   {
     id: "angioplastia-periferica",
     number: 3,
     title: "Angioplastia Vascular Periférica",
     description:
-      "Tratamiento de obstrucciones en arterias de las piernas para evitar amputaciones. Técnicas y materiales avanzados permiten salvar el miembro inferior amenazado, incluso en casos no candidatos para cirugía.",
+      "La obstrucción de las arterias de las piernas puede provocar dolor al caminar (claudicación) y puede llegar a ser tan importante que termina por colocar a los pacientes, que padecen tal condición, en riesgo de amputación (isquemia crítica). El avance en las técnicas y en el desarrollo de materiales, ha permitido que muchos de estos pacientes puedan ser tratados exitosamente, logrando salvar el miembro inferior amenazado, incluso en casos no candidatos para cirugía.",
+    quote: "Nuestro lema, evitar a toda costa una amputación.",
+    coverImage: "/procedimientos/portada-angioplastia-periferica.png",
     video: "/HEMODINAMIA_Y_CATETERISMO.mp4",
-    videoPreviewTime: 18,
-    videoCoverPosition: faceCover,
   },
   {
     id: "litotricia",
     number: 4,
     title: "Litotricia Intravascular",
     description:
-      "Ondas de choque sónicas para fracturar placas de calcio en arterias severamente calcificadas, facilitando el tratamiento de lesiones coronarias y periféricas complejas.",
+      "La calcificación severa de las arterias dificulta su tratamiento mediante angioplastia. En este caso, contamos con un innovador procedimiento llamado litotricia intravascular. En el mismo se fracturan las placas de calcio mediante ondas de choque sónicas. Esta tecnología de punta facilita el tratamiento de lesiones coronarias y periféricas complejas de forma exitosa, garantizando mejores resultados.",
     reverse: true,
     altBg: true,
+    coverImage: "/procedimientos/portada-litotricia.png",
     video: "/LITOTRIPSIA.mp4",
-    videoPreviewTime: 6,
-    videoCoverPosition: faceCover,
   },
   {
     id: "endoprotesis",
     number: 5,
     title: "Endoprótesis Aórtica (EVAR/TEVAR)",
     description:
-      "Tratamiento de aneurismas y disecciones de la aorta mediante prótesis vasculares implantadas por cateterismo, sin cirugía mayor abierta. Recuperación más rápida y menos dolorosa.",
+      "La enfermedad de la arteria aorta, como aneurismas y disecciones, pueden ser tratados mediante la colocación de prótesis vasculares, colocadas a través de cateterismo, sin necesidad de una cirugía mayor abierta. Este procedimiento consiste en implantar un dispositivo tubular (conocido como stent-graft). Con este procedimiento, la recuperación es significativamente más rápida y menos dolorosa, comparada con la cirugía convencional.",
+    coverImage: "/procedimientos/portada-endoprotesis.png",
     video: "/ENDOPROTESIS_AORTICA.mp4",
-    videoPreviewTime: 10,
-    videoCoverPosition: faceCover,
   },
   {
     id: "valvulas",
     number: 6,
-    title: "Válvulas Cardíacas Transcatéter",
+    title: "Colocación de Válvulas Cardíacas Transcatéter (TAVI/TMVr/TPVr)",
     description:
-      "Colocación de prótesis valvulares biológicas por cateterismo (TAVI/TMVr/TPVr) sin cirugía a corazón abierto. Indicado en pacientes de alto riesgo quirúrgico y alta fragilidad clínica.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDMp_pw2amTRJXb8wVXl2a5lj6y9Qsq5t_EwIbeWeX-NuQdWR5XLuPneusBRqa-0kw4p_QWI1yHccqzl56qQlroNP9gPOHXY3VE90rkBYw59P241S8MkgaMBThDRzp7cul8KGceBD8gBAu8ePSCCCIM9XmZSl9YFbu9DHQlrMMG7A6y_SLCDzwqN4cyZih5m4YbpuiFzaOiUzY4C73j-cBIE89fui1HmkU0jxrfQCxX_uQXk2eJl3ZnjV3Yq0-7sRYDaiNkG2iV8AA",
+      "Hoy en día, las afecciones de las válvulas cardíacas (estenosis o insuficiencia), se pueden tratar a través de la colocación de prótesis valvulares, biológicas, por medio de cateterismo cardiaco con válvulas cardíacas transcatéter. Se puede tratar la válvula aórtica, la mitral o la pulmonar, sin necesidad de cirugía a corazón abierto. Es un procedimiento claramente indicado en los pacientes con contraindicaciones para operación abierta y en aquellos con alto riesgo quirúrgico. No obstante, se puede utilizar en pacientes con riesgo quirúrgico intermedio si las condiciones del paciente lo ameritan. Es el caso de pacientes con alta fragilidad clínica. Tiene alto impacto en la disminución de las complicaciones y en la recuperación de los pacientes.",
+    coverImage: "/procedimientos/portada-valvulas.png",
     reverse: true,
     altBg: true,
   },
@@ -91,5 +88,23 @@ export const proceduresList: ProcedureItem[] = [
 
 export const sidebarLinks = proceduresList.map((p) => ({
   id: p.id,
-  label: p.title.replace(" (EVAR/TEVAR)", "").replace(" Transcatéter", ""),
+  label: p.title
+    .replace(" (EVAR/TEVAR)", "")
+    .replace(" (TAVI/TMVr/TPVr)", ""),
 }));
+
+/** Resúmenes para tarjetas en la home — primeras ideas del documento oficial */
+export const proceduresPreviewSummaries: Record<string, string> = {
+  "cateterismo-diagnostico":
+    "Mide presiones y detecta obstrucciones en arterias y venas con diagnóstico preciso en tiempo real.",
+  "angioplastia-coronaria":
+    "Dilatación y colocación de Stent para restablecer el flujo coronario; tratamiento de elección en infarto agudo.",
+  "angioplastia-periferica":
+    "Tratamiento de obstrucciones en arterias de las piernas para evitar amputación.",
+  litotricia:
+    "Ondas de choque sónicas que fracturan placas de calcio en lesiones coronarias y periféricas complejas.",
+  endoprotesis:
+    "Prótesis vasculares por cateterismo para aneurismas y disecciones de la aorta, sin cirugía abierta.",
+  valvulas:
+    "Prótesis valvulares biológicas por cateterismo en válvula aórtica, mitral o pulmonar.",
+};

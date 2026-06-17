@@ -11,15 +11,16 @@ export default function AlliesSection() {
         <div className="flex flex-wrap items-center justify-center gap-12">
           <Link
             href="/blog/imaye"
-            className="transition-transform hover:scale-105"
-            aria-label="IMAYE - Inversiones Médica AYE"
+            className="inline-block transition-transform hover:scale-[1.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            aria-label="IMAYE - Ver artículo en el blog"
           >
             <Image
               src="/imaye.png"
               alt="IMAYE - Inversiones Médica AYE"
-              width={320}
-              height={180}
-              className="h-20 w-auto object-contain sm:h-28 md:h-36 lg:h-44"
+              width={480}
+              height={270}
+              className="h-28 w-auto object-contain sm:h-36 md:h-48 lg:h-56 xl:h-64"
+              priority
             />
           </Link>
         </div>
