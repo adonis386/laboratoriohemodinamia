@@ -9,8 +9,11 @@ import VideoCover from "@/components/ui/VideoCover";
 
 const DEFAULT_PREVIEW_TIME = 3;
 
-/** Encuadre por defecto: prioriza rostro (evita recorte en la parte superior) */
-const DEFAULT_COVER_POSITION = "center 28%";
+/** Dimensiones reales de las portadas en public/procedimientos/ */
+const COVER_WIDTH = 2020;
+const COVER_HEIGHT = 1024;
+
+const DEFAULT_COVER_POSITION = "center center";
 
 type ProcedureMediaProps = {
   alt: string;
@@ -53,43 +56,51 @@ export default function ProcedureMedia({
 
   return (
     <>
-      <div className="relative min-h-[300px] bg-surface-container-low lg:w-1/2">
-        {poster ? (
-          <Image
-            src={poster}
-            alt={alt}
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-        ) : video ? (
-          <VideoCover
-            src={video}
-            previewTime={videoPreviewTime}
-            objectPosition={videoCoverPosition}
-          />
-        ) : null}
-        {showPlay ? (
-          <MotionButton
-            type="button"
-            onClick={() => setOpen(true)}
-            className="video-overlay-gradient group absolute inset-0 flex cursor-pointer items-center justify-center"
-            aria-label={`Reproducir video: ${alt}`}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.96 }}
-            transition={interactiveSpring}
-          >
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition-transform group-active:scale-90">
-              <MaterialIcon name="play_arrow" className="text-4xl text-white" filled />
+      <div className="relative flex h-full w-full items-center justify-center bg-surface-container-low lg:w-1/2">
+        <div className="relative w-full">
+          {poster ? (
+            <Image
+              src={poster}
+              alt={alt}
+              width={COVER_WIDTH}
+              height={COVER_HEIGHT}
+              className="block h-auto w-full"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          ) : video ? (
+            <div className="relative aspect-[2020/1024] w-full">
+              <VideoCover
+                src={video}
+                previewTime={videoPreviewTime}
+                objectPosition={videoCoverPosition}
+                className="absolute inset-0 h-full w-full object-contain"
+              />
             </div>
-          </MotionButton>
-        ) : (
-          <div className="video-overlay-gradient pointer-events-none absolute inset-0 flex items-center justify-center opacity-50">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md">
-              <MaterialIcon name="play_arrow" className="text-4xl text-white" filled />
-            </div>
-          </div>
-        )}
+          ) : null}
+          {showPlay ? (
+            <MotionButton
+              type="button"
+              onClick={() => setOpen(true)}
+              className="video-overlay-gradient group absolute inset-0 flex cursor-pointer items-center justify-center"
+              aria-label={`Reproducir video: ${alt}`}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.96 }}
+              transition={interactiveSpring}
+            >
+              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition-transform group-active:scale-90">
+                <MaterialIcon name="play_arrow" className="text-4xl text-white" filled />
+              </div>
+            </MotionButton>
+          ) : (
+            poster && (
+              <div className="video-overlay-gradient pointer-events-none absolute inset-0 flex items-center justify-center opacity-50">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/20 backdrop-blur-md">
+                  <MaterialIcon name="play_arrow" className="text-4xl text-white" filled />
+                </div>
+              </div>
+            )
+          )}
+        </div>
       </div>
 
       {open && video && (

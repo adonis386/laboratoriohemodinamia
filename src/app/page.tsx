@@ -2,7 +2,7 @@ import HeroCarousel from "@/components/home/HeroCarousel";
 import AlliesSection from "@/components/home/AlliesSection";
 import StrategicPlanSection from "@/components/home/StrategicPlanSection";
 import HistorySection from "@/components/home/HistorySection";
-import ProceduresPreview from "@/components/home/ProceduresPreview";
+import ProceduresSection from "@/components/procedimientos/ProceduresSection";
 import DoctorsPreview from "@/components/home/DoctorsPreview";
 import BlogPreview from "@/components/home/BlogPreview";
 import GalleryPreview from "@/components/home/GalleryPreview";
@@ -22,7 +22,7 @@ export default function HomePage() {
         <HistorySection />
       </FadeIn>
       <FadeIn>
-        <ProceduresPreview />
+        <ProceduresSection id="procedimientos" title="Nuestros procedimientos" />
       </FadeIn>
       <FadeIn>
         <DoctorsPreview />

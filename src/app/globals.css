@@ -99,14 +99,6 @@ body {
   max-width: 100%;
 }
 
-@media (min-width: 1024px) {
-  .hero-viewport {
-    aspect-ratio: auto;
-    height: 100dvh;
-    max-height: 100dvh;
-  }
-}
-
 .gradient-hero {
   background: linear-gradient(135deg, #007498 0%, #009fc2 100%);
 }

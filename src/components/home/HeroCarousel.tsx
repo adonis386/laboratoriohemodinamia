@@ -44,7 +44,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <section className="relative isolate w-full max-w-full overflow-hidden bg-primary-deep lg:-mt-[var(--site-header-height)]">
+    <section className="relative isolate w-full max-w-full overflow-hidden bg-primary-deep">
       <motion.div
         className="relative w-full max-w-full overflow-hidden"
         initial={prefersReducedMotion ? false : { opacity: 0 }}
@@ -73,7 +73,7 @@ export default function HeroCarousel() {
                     src={slide.src}
                     alt={slide.alt}
                     fill
-                    className="object-contain lg:object-cover"
+                    className="object-contain"
                     style={
                       "objectPosition" in slide
                         ? { objectPosition: slide.objectPosition }
@@ -91,7 +91,7 @@ export default function HeroCarousel() {
               src={heroSlides[0].src}
               alt={heroSlides[0].alt}
               fill
-              className="object-contain lg:object-cover"
+              className="object-contain"
               style={
                 "objectPosition" in heroSlides[0]
                   ? { objectPosition: heroSlides[0].objectPosition }

@@ -1,6 +1,4 @@
 import { blogPosts } from "@/lib/blog-content";
-import { proceduresPreviewSummaries } from "@/lib/procedimientos-content";
-
 export const heroSlides = [
   {
     src: "/hero_(7).png",
@@ -35,14 +33,13 @@ export const heroSlides = [
 
 export const strategicPlan = {
   image: "/FOTO_DE_PLAN_ESTRATEGICO.png",
-  title: "Nuestro Plan Estratégico: Valor, Innovación y Cercanía",
+  title: "Plan Estratégico",
   paragraphs: [
     "Nos enfocamos en agregar un alto valor optimizando la experiencia de nuestros pacientes, garantizando que cada procedimiento de hemodinamia y cateterismo se realice con una precisión inigualable, minimizando riesgos y acelerando su recuperación.",
     "Nuestra meta es consolidar aún más nuestra posición como líder en formación médica. Seguiremos impulsando el mejoramiento continuo de nuestro equipo a través de fellows, tenemos una participación y acercamiento activo a tecnologías innovadoras y a los eventos de cardiología intervencionista más relevantes. Esto nos permitirá integrar los últimos avances y mantenernos a la vanguardia global.",
     "Aspiramos expandir nuestro impacto, no solo en la cardiología, sino también en otros campos vasculares como cerebro, riñones y miembros inferiores, aprovechando nuestras capacidades de cateterismo. Nuestro objetivo es que el Laboratorio Hemodinamia HCC sea reconocido como un centro de autoridad y confianza más allá de nuestras fronteras, donde la innovación tecnológica, la experiencia, la gestión de conocimiento y la calidez humana se unen para proteger el corazón vida de nuestros pacientes",
     "Este es nuestro compromiso: ser aliado incondicional en la salud del corazón, con una excelencia que evoluciona continuamente.",
   ],
-  slogan: "Al Lado de tu Corazón®",
 } as const;
 
 export const historySection = {
@@ -55,7 +52,6 @@ export const historySection = {
     "En el año 1989, se inició un programa de formación en hemodinamia y cardiología intervencionista, liderado por el Dr. Francisco Tortoledo, el cual cuenta en su aval con la formación de 13 médicos cardiólogos, hemodinamistas, quienes han cumplido una labor encomiable en el campo de la cardiología intervencionista en Venezuela.",
     "Seguimos empeñados en mejorar en función de la mejor atención para nuestros pacientes.",
     "El logro de objetivos superiores, mediante el esfuerzo continuado, teniendo como norte la búsqueda de la calidad, es lo que nos guía cada día.",
-    "Al lado de tu corazón®",
   ],
   author: "Dr. Enrique Fermín M.",
   authorRole: "Jefe Laboratorio Hemodinamia HCC",
@@ -63,51 +59,6 @@ export const historySection = {
   video: "/HISTORIA_97.mp4",
   coverImage: "/blog/portada-resena-historica.png",
   coverPosition: "center 32%",
-} as const;
-
-export const proceduresPreview = {
-  background:
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCAzqP4L8Z7F94Fy1V9GRN3nD_OTcz1kSHSJJPCDQlG0xqcuIxtcQSYRdYZTT54Gq8EsKkSx7EiCYqptAEeExndcAXIZ_jGcal9L2SXX-VqNt9sfzV7-tnn8OeECpp3KzLolcnK1GHX3sEL_URysMIJ5RiwqcvEtwTd0jCtSb34-ztFeEmtxEaCzn7mQoxqgAJVSd2_eR4jVNqRH5Kdq7A2bpIYbo131JC4vHlUKYiktmzYwAIpVDDsl5ZF0iPA5pT0yBemkL2m6R0",
-  video: "/HEMODINAMIA_Y_CATETERISMO.mp4",
-  videoPreviewTime: 10,
-  items: [
-    {
-      icon: "monitor_heart",
-      title: "Cateterismo",
-      description: proceduresPreviewSummaries["cateterismo-diagnostico"],
-      href: "/procedimientos#cateterismo-diagnostico",
-    },
-    {
-      icon: "health_and_safety",
-      title: "Angioplastia Coronaria",
-      description: proceduresPreviewSummaries["angioplastia-coronaria"],
-      href: "/procedimientos#angioplastia-coronaria",
-    },
-    {
-      icon: "footprint",
-      title: "Angioplastia Periférica",
-      description: proceduresPreviewSummaries["angioplastia-periferica"],
-      href: "/procedimientos#angioplastia-periferica",
-    },
-    {
-      icon: "bolt",
-      title: "Litotricia",
-      description: proceduresPreviewSummaries.litotricia,
-      href: "/procedimientos#litotricia",
-    },
-    {
-      icon: "settings_input_component",
-      title: "EVAR/TEVAR",
-      description: proceduresPreviewSummaries.endoprotesis,
-      href: "/procedimientos#endoprotesis",
-    },
-    {
-      icon: "favorite",
-      title: "Válvulas Cardíacas",
-      description: proceduresPreviewSummaries.valvulas,
-      href: "/procedimientos#valvulas",
-    },
-  ],
 } as const;
 
 const blogPreviewTimes: Record<string, number> = {

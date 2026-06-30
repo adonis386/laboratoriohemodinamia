@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BrandSlogan from "@/components/ui/BrandSlogan";
 import { strategicPlan } from "@/lib/home-content";
 
 export default function StrategicPlanSection() {
@@ -22,7 +23,7 @@ export default function StrategicPlanSection() {
             {strategicPlan.paragraphs.map((paragraph) => (
               <p key={paragraph.slice(0, 48)}>{paragraph}</p>
             ))}
-            <p className="font-bold">{strategicPlan.slogan}</p>
+            <BrandSlogan className="mt-2" />
           </div>
         </div>
       </div>

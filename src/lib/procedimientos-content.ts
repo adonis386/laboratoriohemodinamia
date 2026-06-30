@@ -92,19 +92,3 @@ export const sidebarLinks = proceduresList.map((p) => ({
     .replace(" (EVAR/TEVAR)", "")
     .replace(" (TAVI/TMVr/TPVr)", ""),
 }));
-
-/** Resúmenes para tarjetas en la home — primeras ideas del documento oficial */
-export const proceduresPreviewSummaries: Record<string, string> = {
-  "cateterismo-diagnostico":
-    "Mide presiones y detecta obstrucciones en arterias y venas con diagnóstico preciso en tiempo real.",
-  "angioplastia-coronaria":
-    "Dilatación y colocación de Stent para restablecer el flujo coronario; tratamiento de elección en infarto agudo.",
-  "angioplastia-periferica":
-    "Tratamiento de obstrucciones en arterias de las piernas para evitar amputación.",
-  litotricia:
-    "Ondas de choque sónicas que fracturan placas de calcio en lesiones coronarias y periféricas complejas.",
-  endoprotesis:
-    "Prótesis vasculares por cateterismo para aneurismas y disecciones de la aorta, sin cirugía abierta.",
-  valvulas:
-    "Prótesis valvulares biológicas por cateterismo en válvula aórtica, mitral o pulmonar.",
-};

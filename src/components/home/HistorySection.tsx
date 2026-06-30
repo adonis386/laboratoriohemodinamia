@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import BrandSlogan from "@/components/ui/BrandSlogan";
 import { MotionButton } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { interactiveSpring } from "@/lib/motion";
@@ -37,6 +38,11 @@ export default function HistorySection() {
                 {paragraph}
               </p>
             ))}
+            <BrandSlogan
+              className="pt-2 text-on-surface"
+              nameClassName="font-bold text-on-surface"
+              sloganClassName="font-bold text-on-surface"
+            />
           </div>
           <div className="mt-8 flex items-center gap-4 border-t border-page-gray pt-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-ice-blue-deep">

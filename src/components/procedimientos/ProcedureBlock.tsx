@@ -26,7 +26,7 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
   return (
     <article
       id={id}
-      className={`flex flex-col overflow-hidden rounded-xl border-l-4 border-primary shadow-sm transition hover:shadow-md lg:flex-row ${
+      className={`flex flex-col overflow-hidden rounded-xl border-l-4 border-primary shadow-sm transition hover:shadow-md lg:flex-row lg:items-stretch ${
         altBg ? "bg-ice-blue-mid" : "bg-white"
       } ${reverse ? "lg:flex-row-reverse" : ""}`}
     >

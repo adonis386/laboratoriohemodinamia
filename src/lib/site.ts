@@ -1,6 +1,6 @@
 export const site = {
   name: "Laboratorio Hemodinamia HCC",
-  tagline: "Hemodinamia y cateterismo",
+  tagline: "Hemodinamia y Cateterismo",
   slogan: "Al Lado de tu Corazón",
   description:
     "Centro especializado en hemodinamia, cateterismo cardíaco y cardiología intervencionista en Caracas, Venezuela.",
@@ -41,7 +41,7 @@ export const site = {
 export const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/directorio", label: "Directorio Médico LHHCC" },
-  { href: "/procedimientos", label: "Nuestros procedimientos" },
+  { href: "/procedimientos", label: "Procedimientos" },
   { href: "/blog", label: "Blog LHHCC" },
   { href: "/galeria", label: "Galería LHHCC" },
   { href: "/contacto", label: "Contáctanos" },

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandSlogan from "@/components/ui/BrandSlogan";
 import { site } from "@/lib/site";
 
 const menuLinks = [
@@ -9,22 +10,16 @@ const menuLinks = [
   { href: "/contacto", label: "Contáctanos" },
 ] as const;
 
-function RegisteredSlogan() {
-  return (
-    <p className="mt-2 text-sm font-bold text-white">
-      Al lado de tú corazón
-      <sup className="ml-px align-super text-[0.65em] font-normal leading-none">®</sup>
-    </p>
-  );
-}
-
 export default function Footer() {
   return (
     <footer className="mt-auto w-full bg-primary text-white">
       <div className="mx-auto grid max-w-container grid-cols-1 gap-10 px-4 py-14 md:grid-cols-2 md:px-6 lg:grid-cols-3">
         <div>
-          <h2 className="text-xl font-bold uppercase tracking-wide">{site.name}</h2>
-          <RegisteredSlogan />
+          <BrandSlogan
+            nameClassName="text-xl font-bold uppercase tracking-wide text-white"
+            sloganClassName="mt-2 text-sm font-bold text-white"
+            useTuAccent
+          />
           <p className="mt-4 text-sm leading-relaxed text-white/80">{site.address}</p>
           <p className="mt-3 text-sm text-white/80">
             <a href={site.phoneHref} className="hover:text-white">

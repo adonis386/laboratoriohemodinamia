@@ -1,3 +1,5 @@
+import BrandSlogan, { isBrandSlogan } from "@/components/ui/BrandSlogan";
+
 function isHeading(text: string): boolean {
   const trimmed = text.trim();
   if (trimmed.length > 140) return false;
@@ -18,6 +20,16 @@ export default function BlogArticleBody({ paragraphs }: BlogArticleBodyProps) {
     <div className="prose prose-lg max-w-none text-on-surface">
       {paragraphs.map((para) => {
         const key = para.slice(0, 48);
+        if (isBrandSlogan(para)) {
+          return (
+            <BrandSlogan
+              key={key}
+              className="mb-4 mt-6 text-on-surface"
+              nameClassName="font-bold text-on-surface"
+              sloganClassName="font-bold text-on-surface"
+            />
+          );
+        }
         if (isHeading(para)) {
           return (
             <h2 key={key} className="mb-4 mt-8 text-xl font-semibold text-primary first:mt-0">
