@@ -80,6 +80,6 @@ export const procedures = [
   { id: "angioplastia-coronaria", title: "Angioplastia Coronaria", number: 2 },
   { id: "angioplastia-periferica", title: "Angioplastia Vascular Periférica", number: 3 },
   { id: "litotricia", title: "Litotricia Intravascular", number: 4 },
-  { id: "endoprotesis", title: "Endoprótesis Aórtica (EVAR/TEVAR)", number: 5 },
+  { id: "endoprotesis", title: "Endoprótesis Aórtica", number: 5 },
   { id: "valvulas", title: "Válvulas Cardíacas Transcatéter", number: 6 },
 ] as const;

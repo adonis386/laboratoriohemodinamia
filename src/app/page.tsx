@@ -22,7 +22,7 @@ export default function HomePage() {
         <HistorySection />
       </FadeIn>
       <FadeIn>
-        <ProceduresSection id="procedimientos" title="Nuestros procedimientos" />
+        <ProceduresSection id="procedimientos" title="Procedimientos" />
       </FadeIn>
       <FadeIn>
         <DoctorsPreview />

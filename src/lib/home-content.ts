@@ -56,6 +56,7 @@ export const historySection = {
   author: "Dr. Enrique Fermín M.",
   authorRole: "Jefe Laboratorio Hemodinamia HCC",
   authorDate: "Julio 2025.",
+  authorAvatar: "/avatar_dr.jpg",
   video: "/HISTORIA_97.mp4",
   coverImage: "/blog/portada-resena-historica.png",
   coverPosition: "center 32%",

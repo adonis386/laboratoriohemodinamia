@@ -45,8 +45,14 @@ export default function HistorySection() {
             />
           </div>
           <div className="mt-8 flex items-center gap-4 border-t border-page-gray pt-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-ice-blue-deep">
-              <MaterialIcon name="person" className="text-primary" />
+            <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-ice-blue-deep">
+              <Image
+                src={historySection.authorAvatar}
+                alt={historySection.author}
+                fill
+                className="object-cover object-[center_20%]"
+                sizes="48px"
+              />
             </div>
             <div>
               <p className="font-bold text-on-surface">{historySection.author}</p>
