@@ -76,6 +76,16 @@ const postsMeta = [
     imagePosition: "center 32%",
     video: "/HISTORIA_97.mp4",
   },
+  {
+    slug: "prevencion",
+    title: "Prevención",
+    excerpt:
+      "La prevención cardiovascular primaria y secundaria como clave para evitar eventos cardíacos y cerebrovasculares.",
+    author: "Dr. Enrique Fermín M.",
+    date: "10 Jun 2026",
+    image: "/blog/portada-prevencion.png",
+    video: "/BLOG_PREVENCION.mp4",
+  },
 ] as const;
 
 function prepareParagraphs(_slug: string, title: string, raw: string[]): string[] {

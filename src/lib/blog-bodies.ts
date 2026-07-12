@@ -3,6 +3,7 @@ import enfermedadArterial from "@/content/blog/enfermedad-arterial-miembros-infe
 import hemodinamiaCateterismo from "@/content/blog/hemodinamia-y-cateterismo.json";
 import imaye from "@/content/blog/imaye.json";
 import litotricia from "@/content/blog/litotricia-intracoronaria.json";
+import prevencion from "@/content/blog/prevencion.json";
 import resenaHistorica from "@/content/blog/resena-historica.json";
 
 export const blogBodies: Record<string, string[]> = {
@@ -12,4 +13,5 @@ export const blogBodies: Record<string, string[]> = {
   "enfermedad-arterial-miembros-inferiores": enfermedadArterial,
   "litotricia-intracoronaria": litotricia,
   "resena-historica": resenaHistorica,
+  prevencion,
 };

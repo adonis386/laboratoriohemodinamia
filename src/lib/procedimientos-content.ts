@@ -19,10 +19,6 @@ export type ProcedureItem = {
   altBg?: boolean;
 };
 
-/** Texto introductorio — PROCEDIMIENTOS_WEB_LHHCC.odt */
-export const proceduresIntro =
-  "En el Laboratorio de Hemodinamia HCC, estamos comprometidos con la salud cardiovascular de nuestros pacientes, ofreciéndoles los últimos avances tecnológicos y nuestra experiencia acumulada en más de treinta (30) años de labor ininterrumpida, en el diagnóstico y tratamiento de las afecciones cardiovasculares, a través de cateterismo.";
-
 export const proceduresList: ProcedureItem[] = [
   {
     id: "cateterismo-diagnostico",
@@ -80,6 +76,7 @@ export const proceduresList: ProcedureItem[] = [
     description:
       "Hoy en día, las afecciones de las válvulas cardíacas (estenosis o insuficiencia), se pueden tratar a través de la colocación de prótesis valvulares, biológicas, por medio de cateterismo cardiaco con válvulas cardíacas transcatéter. Se puede tratar la válvula aórtica, la mitral o la pulmonar, sin necesidad de cirugía a corazón abierto. Es un procedimiento claramente indicado en los pacientes con contraindicaciones para operación abierta y en aquellos con alto riesgo quirúrgico. No obstante, se puede utilizar en pacientes con riesgo quirúrgico intermedio si las condiciones del paciente lo ameritan. Es el caso de pacientes con alta fragilidad clínica. Tiene alto impacto en la disminución de las complicaciones y en la recuperación de los pacientes.",
     coverImage: "/procedimientos/portada-valvulas.png",
+    video: "/HISTORIA_102.mp4",
     reverse: true,
     altBg: true,
   },

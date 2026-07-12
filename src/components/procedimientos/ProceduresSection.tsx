@@ -1,7 +1,7 @@
 import ProcedureBlock from "@/components/procedimientos/ProcedureBlock";
 import ProceduresSidebar from "@/components/procedimientos/ProceduresSidebar";
 import FadeInStagger, { FadeInItem } from "@/components/motion/FadeInStagger";
-import { proceduresIntro, proceduresList } from "@/lib/procedimientos-content";
+import { proceduresList } from "@/lib/procedimientos-content";
 
 type ProceduresSectionProps = {
   id?: string;
@@ -19,10 +19,7 @@ export default function ProceduresSection({
   return (
     <section id={id} className="bg-gradient-to-b from-ice-blue-light to-white">
       <div className="mx-auto max-w-container px-4 py-16 text-center md:px-6 md:py-24">
-        <Heading className="mb-4 text-3xl font-bold text-primary md:text-5xl">{title}</Heading>
-        <p className="mx-auto max-w-3xl text-lg leading-relaxed text-on-surface-variant">
-          {proceduresIntro}
-        </p>
+        <Heading className="text-3xl font-bold text-primary md:text-5xl">{title}</Heading>
       </div>
 
       <div className="relative mx-auto flex max-w-container flex-col gap-6 px-4 pb-16 md:flex-row md:gap-6 md:px-6 md:pb-24">
