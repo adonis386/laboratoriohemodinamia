@@ -4,9 +4,9 @@ import ProceduresSection from "@/components/procedimientos/ProceduresSection";
 import FadeIn from "@/components/motion/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Procedimientos",
+  title: "Nuestros Procedimientos",
   description:
-    "Procedimientos de hemodinamia y cardiología intervencionista en el Laboratorio Hemodinamia HCC.",
+    "Nuestros procedimientos de hemodinamia y cardiología intervencionista en el Laboratorio Hemodinamia HCC.",
 };
 
 export default function ProcedimientosPage() {
@@ -15,12 +15,12 @@ export default function ProcedimientosPage() {
       <Breadcrumb
         items={[
           { label: "Inicio", href: "/" },
-          { label: "Procedimientos" },
+          { label: "Nuestros Procedimientos" },
         ]}
       />
 
       <FadeIn>
-        <ProceduresSection title="Procedimientos" headingLevel="h1" />
+        <ProceduresSection title="Nuestros Procedimientos" headingLevel="h1" />
       </FadeIn>
     </>
   );

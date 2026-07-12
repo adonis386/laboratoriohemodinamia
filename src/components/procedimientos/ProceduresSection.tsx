@@ -11,7 +11,7 @@ type ProceduresSectionProps = {
 
 export default function ProceduresSection({
   id,
-  title = "Procedimientos",
+  title = "Nuestros Procedimientos",
   headingLevel = "h2",
 }: ProceduresSectionProps) {
   const Heading = headingLevel;

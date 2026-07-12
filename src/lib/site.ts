@@ -15,10 +15,10 @@ export const site = {
   },
   social: {
     instagram:
-      "https://www.instagram.com/laboratoriohemodinamiahcc?igsh=MWwzYWY0YnJ6cmZjcA==",
+      "https://www.instagram.com/laboratoriohemodinamiahcc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     linkedin: "https://www.linkedin.com/company/laboratorio-hemodinamia-hcc/",
     whatsapp: "https://wa.me/584241787760",
-    youtube: "https://www.youtube.com",
+    youtube: "https://www.youtube.com/@LaboratorioHemodinamiaHCC",
   },
   contact: {
     addressDetail:
@@ -35,13 +35,13 @@ export const site = {
     },
   },
   copyright:
-    "Copyright 2026 @AVC MEDIANET / Vector Studios AI / Laboratorio Hemodinamia HCC. Todos los derechos reservados.",
+    "Copyright 2026 @AVC MEDIANET / Informatica Gonzalez / Laboratorio Hemodinamia HCC. Todos los derechos reservados.",
 } as const;
 
 export const navLinks = [
   { href: "/", label: "Inicio" },
+  { href: "/procedimientos", label: "Nuestros Procedimientos" },
   { href: "/directorio", label: "Directorio Médico LHHCC" },
-  { href: "/procedimientos", label: "Procedimientos" },
   { href: "/blog", label: "Blog LHHCC" },
   { href: "/galeria", label: "Galería LHHCC" },
   { href: "/contacto", label: "Contáctanos" },

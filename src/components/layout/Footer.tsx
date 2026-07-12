@@ -3,9 +3,9 @@ import BrandSlogan from "@/components/ui/BrandSlogan";
 import { site } from "@/lib/site";
 
 const menuLinks = [
-  { href: "/procedimientos", label: "Procedimientos" },
-  { href: "/blog", label: "Blog LHHCC" },
+  { href: "/procedimientos", label: "Nuestros Procedimientos" },
   { href: "/directorio", label: "Directorio Médico" },
+  { href: "/blog", label: "Blog LHHCC" },
   { href: "/galeria", label: "Galería" },
   { href: "/contacto", label: "Contáctanos" },
 ] as const;
