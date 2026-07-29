@@ -1,16 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { MotionAnchor } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { contactMap } from "@/lib/contacto-content";
 import { site } from "@/lib/site";
 
-const mapsDirectionsUrl =
-  "https://www.google.com/maps/search/?api=1&query=Hospital+de+Clínicas+Caracas+San+Bernardino+Caracas";
+const mapsQuery = "Hospital+de+Cl%C3%ADnicas+Caracas+San+Bernardino+Caracas";
+const mapsDirectionsUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+const mapsEmbedUrl = `https://maps.google.com/maps?q=${mapsQuery}&z=16&output=embed`;
 
 export default function ContactMap() {
-  const { mapImage, locationPin } = site.contact;
+  const { locationPin } = site.contact;
 
   return (
     <section className="w-full border-t border-ice-blue-deep bg-ice-blue-mid py-16 md:py-24">
@@ -32,15 +32,16 @@ export default function ContactMap() {
       </div>
 
       <div className="relative h-[420px] w-full overflow-hidden bg-page-gray shadow-inner md:h-[500px]">
-        <Image
-          src={mapImage}
-          alt="Ubicación del Laboratorio Hemodinamia HCC en San Bernardino, Caracas"
-          fill
-          className="object-cover"
-          sizes="100vw"
+        <iframe
+          title="Ubicación del Laboratorio Hemodinamia HCC en San Bernardino, Caracas"
+          src={mapsEmbedUrl}
+          className="absolute inset-0 h-full w-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
         />
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="flex animate-bounce items-center gap-3 rounded-2xl border border-primary bg-white p-4 shadow-xl">
+        <div className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center px-4">
+          <div className="flex items-center gap-3 rounded-2xl border border-primary bg-white p-4 shadow-xl">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
               <MaterialIcon name="location_on" className="text-2xl text-primary" filled />
             </div>
