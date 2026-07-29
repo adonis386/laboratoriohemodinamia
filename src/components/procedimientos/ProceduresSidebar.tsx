@@ -59,10 +59,7 @@ export default function ProceduresSidebar() {
 
       <div className="teal-gradient-bg rounded-xl p-6 text-white shadow-md">
         <MaterialIcon name="calendar_month" className="mb-2 text-3xl" />
-        <p className="mb-2 text-xl font-semibold">¿Precisa más información o agendar una cita?</p>
-        <p className="mb-4 text-sm opacity-90">
-          Agende su procedimiento con nuestros especialistas.
-        </p>
+        <p className="mb-4 text-xl font-semibold">¿Precisa más información o agendar una cita?</p>
         <Link
           href="/contacto"
           className="block w-full rounded-lg bg-white py-2 text-center font-bold text-primary transition active:scale-95"
