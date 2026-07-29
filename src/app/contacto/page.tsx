@@ -8,7 +8,7 @@ import FadeIn from "@/components/motion/FadeIn";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Contáctanos en el Laboratorio Hemodinamia HCC. Agende su cita o consulte sobre procedimientos hemodinámicos en Caracas.",
+    "CONTÁCTENOS en el Laboratorio Hemodinamia HCC. Agende su cita o consulte sobre procedimientos hemodinámicos en Caracas.",
 };
 
 export default function ContactoPage() {

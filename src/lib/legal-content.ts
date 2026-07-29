@@ -27,7 +27,7 @@ export const legalSections = [
       {
         title: "Tus Derechos",
         paragraphs: [
-          "Tienes derecho a acceder a tu información personal, solicitar su rectificación, cancelación o limitación de su tratamiento. Para ejercer estos derechos, contáctanos a través de los canales indicados en nuestro sitio web.",
+          "Tienes derecho a acceder a tu información personal, solicitar su rectificación, cancelación o limitación de su tratamiento. Para ejercer estos derechos, CONTÁCTENOS a través de los canales indicados en nuestro sitio web.",
         ],
       },
     ],

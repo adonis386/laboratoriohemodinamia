@@ -7,7 +7,7 @@ const menuLinks = [
   { href: "/directorio", label: "Directorio Médico" },
   { href: "/blog", label: "Blog LHHCC" },
   { href: "/galeria", label: "Galería" },
-  { href: "/contacto", label: "Contáctanos" },
+  { href: "/contacto", label: "Contáctenos" },
 ] as const;
 
 export default function Footer() {

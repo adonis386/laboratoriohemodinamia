@@ -67,7 +67,7 @@ export default function ProceduresSidebar() {
           href="/contacto"
           className="block w-full rounded-lg bg-white py-2 text-center font-bold text-primary transition active:scale-95"
         >
-          Contáctanos
+          CONTÁCTENOS
         </Link>
       </div>
     </aside>

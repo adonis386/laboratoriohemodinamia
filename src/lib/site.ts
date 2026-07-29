@@ -35,7 +35,7 @@ export const site = {
     },
   },
   copyright:
-    "Copyright 2026 @AVC MEDIANET / Informatica Gonzalez / Laboratorio Hemodinamia HCC. Todos los derechos reservados.",
+    "Copyright 2026 @Todos los derechos reservados / avcmedianet / Informática González / Laboratorio Hemodinamia HCC.",
 } as const;
 
 export const navLinks = [
@@ -44,7 +44,7 @@ export const navLinks = [
   { href: "/directorio", label: "Directorio Médico LHHCC" },
   { href: "/blog", label: "Blog LHHCC" },
   { href: "/galeria", label: "Galería LHHCC" },
-  { href: "/contacto", label: "Contáctanos" },
+  { href: "/contacto", label: "CONTÁCTENOS" },
 ] as const;
 
 export type Doctor = {

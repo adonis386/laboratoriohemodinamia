@@ -50,7 +50,7 @@ export default function HistorySection() {
                 src={historySection.authorAvatar}
                 alt={historySection.author}
                 fill
-                className="object-cover object-[center_20%]"
+                className="object-cover object-center"
                 sizes="48px"
               />
             </div>

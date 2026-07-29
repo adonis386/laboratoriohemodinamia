@@ -6,7 +6,7 @@ export default function GalleryPreview() {
   return (
     <section id="galeria" className="bg-page-gray py-16 md:py-24">
       <div className="mx-auto mb-12 max-w-container px-4 text-center md:px-6">
-        <h2 className="mb-4 text-3xl font-bold text-primary md:text-[32px]">Galería de fotos</h2>
+        <h2 className="mb-4 text-3xl font-bold text-primary md:text-[32px]">Galería LHHCC</h2>
         <p className="text-on-surface-variant">
           Imágenes de nuestro laboratorio y equipamiento.
         </p>

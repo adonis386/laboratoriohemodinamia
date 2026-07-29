@@ -9,7 +9,6 @@ type ProcedureBlockProps = {
 export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
   const {
     id,
-    number,
     title,
     description,
     image,
@@ -31,12 +30,7 @@ export default function ProcedureBlock({ procedure }: ProcedureBlockProps) {
       } ${reverse ? "lg:flex-row-reverse" : ""}`}
     >
       <div className="flex flex-col justify-center p-6 md:p-8 lg:w-1/2">
-        <div className="mb-4 flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white teal-gradient-bg">
-            {number}
-          </span>
-          <h2 className="text-2xl font-semibold text-on-surface">{title}</h2>
-        </div>
+        <h2 className="mb-4 text-2xl font-semibold text-on-surface">{title}</h2>
         <p className="mb-6 leading-relaxed text-on-surface-variant">{description}</p>
         {bullets && (
           <ul className="mb-6 space-y-2">
