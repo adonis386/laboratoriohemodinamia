@@ -9,7 +9,7 @@ export const subjectOptions = [
 export const contactHero = {
   title: "CONTÁCTENOS",
   subtitle:
-    "SOLICITE AQUÍ INFORMACION SOBRE NUESTROS PROCEDIMIENTOS DE HEMODINAMIA Y CATETERISMO",
+    "SOLICITE AQUÍ INFORMACIÓN SOBRE NUESTROS PROCEDIMIENTOS DE HEMODINAMIA Y CATETERISMO",
 };
 
 export const contactMap = {
