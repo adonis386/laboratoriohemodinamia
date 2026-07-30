@@ -17,3 +17,6 @@ export const contactMap = {
   description:
     "Visítenos en el corazón de San Bernardino, en las instalaciones del Hospital de Clínicas Caracas",
 };
+
+/** Endpoint Formspree → entrega a infolhhcc@gmail.com */
+export const formspreeEndpoint = "https://formspree.io/f/mykragdz";

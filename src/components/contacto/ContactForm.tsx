@@ -5,26 +5,40 @@ import { MotionButton } from "@/components/motion/Pressable";
 import ContactField, { contactInputClass } from "@/components/contacto/ContactField";
 import MaterialIcon from "@/components/ui/MaterialIcon";
 import { interactiveSpring } from "@/lib/motion";
-import { subjectOptions } from "@/lib/contacto-content";
+import { formspreeEndpoint, subjectOptions } from "@/lib/contacto-content";
 
-type SubmitState = "idle" | "sending" | "success";
+type SubmitState = "idle" | "sending" | "success" | "error";
 
 export default function ContactForm() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (submitState !== "idle") return;
+    if (submitState === "sending") return;
 
     const form = e.currentTarget;
+    const data = new FormData(form);
+
     setSubmitState("sending");
-    setTimeout(() => {
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) {
+        throw new Error("Formspree rejected the submission");
+      }
+
       setSubmitState("success");
-      setTimeout(() => {
-        setSubmitState("idle");
-        form.reset();
-      }, 3000);
-    }, 1500);
+      form.reset();
+      setTimeout(() => setSubmitState("idle"), 4000);
+    } catch {
+      setSubmitState("error");
+      setTimeout(() => setSubmitState("idle"), 5000);
+    }
   };
 
   return (
@@ -114,14 +128,21 @@ export default function ContactForm() {
           />
         </ContactField>
 
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 space-y-3">
+          {submitState === "error" && (
+            <p className="text-sm text-red-600" role="alert">
+              No se pudo enviar el mensaje. Intente de nuevo o escríbanos a infolhhcc@gmail.com.
+            </p>
+          )}
           <MotionButton
             type="submit"
             disabled={submitState === "sending"}
             className={`flex w-full items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-semibold uppercase tracking-wide text-white shadow-md md:w-auto ${
               submitState === "success"
                 ? "bg-green-600"
-                : "teal-gradient-bg hover:opacity-90"
+                : submitState === "error"
+                  ? "bg-red-600"
+                  : "teal-gradient-bg hover:opacity-90"
             } ${submitState === "sending" ? "opacity-80" : ""}`}
             whileHover={submitState === "idle" ? { scale: 1.06, y: -3 } : undefined}
             whileTap={submitState === "idle" ? { scale: 0.9 } : undefined}
@@ -137,6 +158,12 @@ export default function ContactForm() {
               <>
                 <MaterialIcon name="check_circle" filled />
                 <span>¡Mensaje enviado!</span>
+              </>
+            )}
+            {submitState === "error" && (
+              <>
+                <MaterialIcon name="error" filled />
+                <span>Error al enviar</span>
               </>
             )}
             {submitState === "idle" && (
