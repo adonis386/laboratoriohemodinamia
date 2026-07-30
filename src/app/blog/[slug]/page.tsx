@@ -29,14 +29,15 @@ export default async function BlogArticlePage({ params }: Props) {
 
   return (
     <article>
-      <div className="relative h-64 w-full md:h-80">
+      <div className="relative aspect-[21/9] w-full min-h-[200px] md:min-h-[280px]">
         <Image
-          src={post.image}
+          src={post.heroImage ?? post.image}
           alt={post.title}
           fill
-          className="object-cover"
+          className="object-cover object-center"
           style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
       </div>

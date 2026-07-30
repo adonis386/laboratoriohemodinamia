@@ -7,6 +7,8 @@ export type BlogPost = {
   author: string;
   date: string;
   image: string;
+  /** Portada horizontal al abrir el artículo (si no hay, usa image) */
+  heroImage?: string;
   /** Encuadre CSS object-position para la portada */
   imagePosition?: string;
   /** Ruta en public/, ej. /BLOG_LITOTRICIA.mp4 */
@@ -23,6 +25,7 @@ const postsMeta = [
     author: "IMAYE",
     date: "15 Sep 2024",
     image: "/blog/portada-imaye.png",
+    heroImage: "/blog/hero-imaye.jpg",
     video: "/BLOG_IMAYE_PIONERA_EN_VEN.mp4",
   },
   {
@@ -33,6 +36,7 @@ const postsMeta = [
     author: "Equipo LHHCC",
     date: "02 Nov 2024",
     image: "/blog/portada-cuidado-post-cateterismo.png",
+    heroImage: "/blog/hero-cuidado-post-cateterismo.jpg",
     video: "/BLOG_CUIDADO_POST_CATETERISMO.mp4",
   },
   {
@@ -63,6 +67,7 @@ const postsMeta = [
     author: "IMAYE",
     date: "20 Dic 2024",
     image: "/blog/portada-litotricia.png",
+    heroImage: "/blog/hero-litotricia.jpg",
     video: "/BLOG_LITOTRICIA.mp4",
   },
   {
@@ -84,6 +89,7 @@ const postsMeta = [
     author: "Dr. Enrique Fermín M.",
     date: "10 Jun 2026",
     image: "/blog/portada-prevencion.png",
+    heroImage: "/blog/hero-prevencion.jpg",
     video: "/BLOG_PREVENCION.mp4",
   },
 ] as const;
