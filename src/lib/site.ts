@@ -34,8 +34,17 @@ export const site = {
       subtitle: "Piso 2, Consultorio 204",
     },
   },
-  copyright:
-    "Copyright 2026 @Todos los derechos reservados / avcmedianet / Informática González / Laboratorio Hemodinamia HCC.",
+  copyright: "Copyright 2026 @Todos los derechos reservados",
+  collaborators: [
+    {
+      name: "avcmedia",
+      href: "https://www.instagram.com/avcmedianet/",
+    },
+    {
+      name: "Informática González",
+      href: "https://informaticagonzalez.com",
+    },
+  ],
 } as const;
 
 export const navLinks = [

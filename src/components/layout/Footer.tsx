@@ -4,9 +4,9 @@ import { site } from "@/lib/site";
 
 const menuLinks = [
   { href: "/procedimientos", label: "Nuestros Procedimientos" },
-  { href: "/directorio", label: "Directorio Médico" },
+  { href: "/directorio", label: "Directorio Médico LHHCC" },
   { href: "/blog", label: "Blog LHHCC" },
-  { href: "/galeria", label: "Galería" },
+  { href: "/galeria", label: "Galería LHHCC" },
   { href: "/contacto", label: "Contáctenos" },
 ] as const;
 
@@ -60,9 +60,23 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/20">
-        <p className="px-4 py-6 text-center text-xs text-white/75 md:text-sm">
-          {site.copyright}
+      <div className="border-t border-white/20 px-4 py-6 text-center text-xs text-white/75 md:text-sm">
+        <p>
+          {site.copyright} /{" "}
+          {site.collaborators.map((collaborator, index) => (
+            <span key={collaborator.href}>
+              {index > 0 && " / "}
+              <a
+                href={collaborator.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-2 transition hover:text-white hover:underline"
+              >
+                {collaborator.name}
+              </a>
+            </span>
+          ))}{" "}
+          / {site.name}.
         </p>
       </div>
     </footer>
