@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
-import { MotionLink } from "@/components/motion/Pressable";
+import { MotionCardLink } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
-import { interactiveHover, interactiveSpring, interactiveTapLight } from "@/lib/motion";
 
 type BlogCardProps = {
   slug: string;
@@ -27,23 +25,19 @@ export default function BlogCard({
   imagePosition,
   video,
 }: BlogCardProps) {
-  const prefersReducedMotion = useReducedMotion();
-
   return (
-    <motion.article
+    <MotionCardLink
+      href={`/blog/${slug}`}
       className="card-shadow flex h-full flex-col overflow-hidden rounded-xl border border-ice-blue-deep bg-white"
-      whileHover={prefersReducedMotion ? undefined : interactiveHover}
-      whileTap={prefersReducedMotion ? undefined : interactiveTapLight}
-      transition={interactiveSpring}
     >
       <div className="relative h-48 w-full overflow-hidden">
         <Image
           src={image}
           alt={title}
-          width={400}
-          height={192}
-          className="h-full w-full object-cover"
+          fill
+          className="object-cover"
           style={imagePosition ? { objectPosition: imagePosition } : undefined}
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         {video && (
           <span
@@ -70,18 +64,11 @@ export default function BlogCard({
           {title}
         </h3>
         <p className="mb-6 line-clamp-2 text-sm text-on-surface-variant">{excerpt}</p>
-        <div className="mt-auto">
-          <MotionLink
-            href={`/blog/${slug}`}
-            className="flex items-center gap-2 text-sm font-semibold text-primary"
-            whileHover={{ scale: 1.04, x: 4 }}
-            whileTap={{ scale: 0.92 }}
-          >
-            Leer más
-            <MaterialIcon name="arrow_forward" className="text-sm" />
-          </MotionLink>
+        <div className="mt-auto flex items-center gap-2 text-sm font-semibold text-primary">
+          Leer más
+          <MaterialIcon name="arrow_forward" className="text-sm" />
         </div>
       </div>
-    </motion.article>
+    </MotionCardLink>
   );
 }

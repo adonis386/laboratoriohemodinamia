@@ -27,19 +27,31 @@ export default async function BlogArticlePage({ params }: Props) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
+  const coverSrc = post.heroImage ?? post.image;
+  const isPortraitCover = slug === "resena-historica";
+  const coverWidth = isPortraitCover ? 1080 : post.heroImage ? 1406 : 1080;
+  const coverHeight = isPortraitCover ? 1920 : post.heroImage ? 320 : 504;
+
   return (
     <article>
-      <div className="relative aspect-[21/9] w-full min-h-[200px] md:min-h-[280px]">
+      <div
+        className={
+          isPortraitCover
+            ? "mx-auto w-full max-w-md overflow-hidden bg-inverse-surface"
+            : "w-full overflow-hidden bg-inverse-surface"
+        }
+      >
         <Image
-          src={post.heroImage ?? post.image}
+          src={coverSrc}
           alt={post.title}
-          fill
-          className="object-cover object-center"
-          style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
+          width={coverWidth}
+          height={coverHeight}
+          className="h-auto w-full"
+          style={{ width: "100%", height: "auto" }}
           priority
-          sizes="100vw"
+          quality={90}
+          sizes={isPortraitCover ? "(max-width: 448px) 100vw, 448px" : "100vw"}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
       </div>
 
       <div className="mx-auto max-w-3xl px-4 py-12 md:px-6">

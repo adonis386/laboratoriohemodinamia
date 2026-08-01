@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
-import { MotionLink } from "@/components/motion/Pressable";
+import { MotionCardLink } from "@/components/motion/Pressable";
 import MaterialIcon from "@/components/ui/MaterialIcon";
-import { interactiveHover, interactiveSpring, interactiveTapLight } from "@/lib/motion";
 
 type BlogPreviewCardProps = {
   slug: string;
@@ -21,15 +19,8 @@ export default function BlogPreviewCard({
   image,
   video,
 }: BlogPreviewCardProps) {
-  const prefersReducedMotion = useReducedMotion();
-
   return (
-    <motion.article
-      className="group"
-      whileHover={prefersReducedMotion ? undefined : interactiveHover}
-      whileTap={prefersReducedMotion ? undefined : interactiveTapLight}
-      transition={interactiveSpring}
-    >
+    <MotionCardLink href={`/blog/${slug}`} className="group block">
       <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl bg-black">
         <Image
           src={image}
@@ -52,16 +43,10 @@ export default function BlogPreviewCard({
         {title}
       </h3>
       <p className="mb-4 line-clamp-2 text-sm text-on-surface-variant">{excerpt}</p>
-      <MotionLink
-        href={`/blog/${slug}`}
-        className="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-primary"
-        whileHover={{ scale: 1.05, x: 6 }}
-        whileTap={{ scale: 0.92 }}
-        transition={interactiveSpring}
-      >
+      <span className="flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-primary">
         Leer más
         <MaterialIcon name="arrow_forward" className="text-sm" />
-      </MotionLink>
-    </motion.article>
+      </span>
+    </MotionCardLink>
   );
 }
