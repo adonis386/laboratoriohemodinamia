@@ -29,30 +29,50 @@ export default async function BlogArticlePage({ params }: Props) {
 
   const coverSrc = post.heroImage ?? post.image;
   const isPortraitCover = slug === "resena-historica";
-  const coverWidth = isPortraitCover ? 1080 : post.heroImage ? 1406 : 1080;
-  const coverHeight = isPortraitCover ? 1920 : post.heroImage ? 320 : 504;
+  /** Misma franja panorámica que los demás heroes (1406×320) */
+  const isPanoramicHero = Boolean(post.heroImage);
 
   return (
     <article>
-      <div
-        className={
-          isPortraitCover
-            ? "mx-auto w-full max-w-md overflow-hidden bg-inverse-surface"
-            : "w-full overflow-hidden bg-inverse-surface"
-        }
-      >
-        <Image
-          src={coverSrc}
-          alt={post.title}
-          width={coverWidth}
-          height={coverHeight}
-          className="h-auto w-full"
-          style={{ width: "100%", height: "auto" }}
-          priority
-          quality={90}
-          sizes={isPortraitCover ? "(max-width: 448px) 100vw, 448px" : "100vw"}
-        />
-      </div>
+      {isPortraitCover ? (
+        <div className="mx-auto w-full max-w-md overflow-hidden bg-inverse-surface">
+          <Image
+            src={coverSrc}
+            alt={post.title}
+            width={1080}
+            height={1920}
+            className="h-auto w-full"
+            style={{ width: "100%", height: "auto" }}
+            priority
+            quality={90}
+            sizes="(max-width: 448px) 100vw, 448px"
+          />
+        </div>
+      ) : isPanoramicHero ? (
+        <div className="relative aspect-[1406/320] w-full overflow-hidden bg-inverse-surface">
+          <Image
+            src={coverSrc}
+            alt={post.title}
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+            sizes="100vw"
+          />
+        </div>
+      ) : (
+        <div className="relative aspect-[1080/504] w-full overflow-hidden bg-inverse-surface">
+          <Image
+            src={coverSrc}
+            alt={post.title}
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+            sizes="100vw"
+          />
+        </div>
+      )}
 
       <div className="mx-auto max-w-3xl px-4 py-12 md:px-6">
         <Link
