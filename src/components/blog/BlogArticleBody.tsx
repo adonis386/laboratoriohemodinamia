@@ -2,7 +2,8 @@ import BrandSlogan, { isBrandSlogan } from "@/components/ui/BrandSlogan";
 
 function isHeading(text: string): boolean {
   const trimmed = text.trim();
-  if (trimmed.length > 140) return false;
+  if (trimmed.length > 160) return false;
+  if (/^\d+\.\s/.test(trimmed) && trimmed.length < 160) return true;
   if (trimmed.endsWith(":")) return true;
   if (trimmed === trimmed.toUpperCase() && trimmed.length > 12 && /[A-ZÁÉÍÓÚÑ]/.test(trimmed)) {
     return true;

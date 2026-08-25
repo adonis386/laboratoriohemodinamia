@@ -18,6 +18,17 @@ export type BlogPost = {
 
 const postsMeta = [
   {
+    slug: "etica-medica-y-marketing-digital",
+    title: "Ética Médica y Marketing Digital: La Responsabilidad de Comunicar con Integridad",
+    excerpt:
+      "Cómo el Laboratorio Hemodinamia HCC alinea su comunicación digital con la ética médica y el inbound marketing responsable.",
+    author: "Luis A. Dezerega G.",
+    date: "Ago 2026",
+    image: "/blog/portada-etica-medica-marketing.png",
+    heroImage: "/blog/hero-etica-medica-marketing.png",
+    video: "/BLOG_ETICA_MEDICA_Y_MARKETING_DIGITAL.mp4",
+  },
+  {
     slug: "imaye",
     title: "IMAYE, pionera en Venezuela con procedimientos de OCT",
     excerpt:
